@@ -1,1 +1,0 @@
-../../call-hworld_task/work/message2world.txt

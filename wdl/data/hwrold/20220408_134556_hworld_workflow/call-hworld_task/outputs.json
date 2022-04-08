@@ -1,4 +1,0 @@
-{
-  "hworld_task.hworld_docker": "quay.io/theiagen/utility:1.2",
-  "hworld_task.hworld_results": "/home/kevin_libuit/wm_training/wdl/data/hwrold/20220408_134556_hworld_workflow/call-hworld_task/out/hworld_results/message2world.txt"
-}

@@ -1,8 +1,0 @@
-2022-04-08 13:47:00.357 wdl.w:hworld_workflow.t:call-hworld_task NOTICE task start :: name: "hworld_task", source: "../tasks/task_hworld.wdl", line: 3, column: 1, dir: "/home/kevin_libuit/wm_training/wdl/data/hwrold/20220408_134700_hworld_workflow/call-hworld_task", thread: 140208641455872
-2022-04-08 13:47:00.506 wdl.w:hworld_workflow.t:call-hworld_task WARNING docker swarm lists existing miniwdl-related services. This is normal if other miniwdl processes are running concurrently; otherwise, stale state could interfere with this run. To reset it, `docker swarm leave --force`
-2022-04-08 13:47:00.507 wdl.w:hworld_workflow.t:call-hworld_task NOTICE docker swarm resources :: workers: 1, max_cpus: 8, max_mem_bytes: 33668861952, total_cpus: 8, total_mem_bytes: 33668861952
-2022-04-08 13:47:00.509 wdl.w:hworld_workflow.t:call-hworld_task WARNING ignored runtime settings :: keys: ["disks"]
-2022-04-08 13:47:00.574 wdl.w:hworld_workflow.t:call-hworld_task NOTICE docker image :: tag: "quay.io/theiagen/utility:1.2", id: "sha256:cc42a01fdb6240a6f9012e923014ce0129bab5c2dac7cd16fb90edab96a49333", RepoDigest: "quay.io/theiagen/utility@sha256:8d39c5018411b2cc243ff354754963a3a595c114be4c450372eab9961f4f2170"
-2022-04-08 13:47:01.504 wdl.w:hworld_workflow.t:call-hworld_task NOTICE docker task running :: service: "z5bffn8phl", task: "subx4h2hqa", node: "wnhhprhwfg", message: "started"
-2022-04-08 13:47:03.268 wdl.w:hworld_workflow.t:call-hworld_task NOTICE docker task exit :: state: "complete", exit_code: 0
-2022-04-08 13:47:03.965 wdl.w:hworld_workflow.t:call-hworld_task NOTICE done
