@@ -1,0 +1,4 @@
+{
+  "hworld_workflow.hworld_message": "/home/kevin_libuit/wm_training/wdl/data/hwrold/20220408_134556_hworld_workflow/out/hworld_message/message2world.txt",
+  "hworld_workflow.hworld_docker": "quay.io/theiagen/utility:1.2"
+}

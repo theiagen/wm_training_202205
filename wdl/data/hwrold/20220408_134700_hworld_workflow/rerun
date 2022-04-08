@@ -1,0 +1,1 @@
+pushd /home/kevin_libuit/wm_training/wdl/data/hwrold && miniwdl run /home/kevin_libuit/wm_training/wdl/workflows/wf_hworld.wdl -i hworld_inputs.json; popd

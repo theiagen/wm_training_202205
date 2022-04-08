@@ -1,0 +1,23 @@
+{
+  "error": "RunFailed",
+  "task": "hworld_task",
+  "run": "call-hworld_task",
+  "dir": "/home/kevin_libuit/wm_training/wdl/data/hwrold/20220408_134444_hworld_workflow/call-hworld_task",
+  "cause": {
+    "error": "OutputError",
+    "message": "File/Directory path not found in task output hworld_results",
+    "node": "decl-hworld_results",
+    "run": "call-hworld_task",
+    "dir": "/home/kevin_libuit/wm_training/wdl/data/hwrold/20220408_134444_hworld_workflow/call-hworld_task",
+    "pos": {
+      "source": "/home/kevin_libuit/wm_training/wdl/tasks/task_hworld.wdl",
+      "line": 3,
+      "column": 1
+    }
+  },
+  "pos": {
+    "source": "/home/kevin_libuit/wm_training/wdl/tasks/task_hworld.wdl",
+    "line": 3,
+    "column": 1
+  }
+}
