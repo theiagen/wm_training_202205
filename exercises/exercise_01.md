@@ -33,15 +33,17 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  The total number of reads is captured as `qc_stats.read_total` in the `fastq-scan` output json file. Think of ways to parse the fastq-scan output file to capture this value.
  
  Check out the [fastq-scan StaPH-B Docker Builds README.md](https://github.com/StaPH-B/docker-builds/tree/master/fastq-scan/0.4.4) before seeing the final solution!
- <details>
-   <summary> 1.2 Solution 
-   </summary> 
-   <br />
-    
-   One approach could be to concatenate the gzipped fastq file with `zcat`, pipe it into fastq-scan, and then pipe fastq-scan json output into the `jq` tool to query for `qc_stats.read_total`:<br />
-   
-    $ zcat {read_file} |  fastq-scan | jq .qc_stats.read_total > TOTAL_READS
+
 </details>
+
+<details>
+ <summary> 1.2 Solution 
+ </summary> 
+ <br />    
+One approach could be to concatenate the gzipped fastq file with `zcat`, pipe it into fastq-scan, and then pipe fastq-scan json output into the `jq` tool to query for `qc_stats.read_total`:<br />
+   
+ $ zcat {read_file} |  fastq-scan | jq .qc_stats.read_total > TOTAL_READS
+
 </details>
 
 <details>
@@ -50,9 +52,11 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  
  How does the hworld_inputs.json file define the `name` input attribute?
 
-  <details>
-    <summary> 2.2 Solution 
-     </summary> 
+</details>
+
+<details>
+  <summary> 2.2 Solution 
+   </summary> 
  
 ```
  $ cat ~/wm_training/wdl/data/hwrold/hworld_inputs.json
@@ -60,25 +64,23 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
   "hworld_workflow.name": "John Doe"
 }
 ```
-</details>
+
 </details>
 
 <details>
  <summary> 2.3 Hint
  </summary><br />
  
+ HINT
   
-
-
-  <details>
-    <summary> 2.2 Solution 
-     </summary> 
- 
-```
- $ cat ~/wm_training/wdl/tasks/task_fastq_scan.wdl
- {
-  "hworld_workflow.name": "John Doe"
-}
-```
 </details>
+
+<details>
+  <summary> 2.2 Solution 
+  </summary><br />
+  
+Check the following files in the [`solutions` branch](https://github.com/theiagen/wm_training/tree/solutions) of this repository: 
+    - [`wm_training/wdl/tasks/task_fastq_scan.wdl`](https://github.com/theiagen/wm_training/blob/solutions/wdl/tasks/task_fastq_scan.wdl)
+    - [`wm_training/wdl/workflows/wf_fastq_scan.wdl`](https://github.com/theiagen/wm_training/blob/solutions/wdl/workflows/wf_fastq_scan.wdl)
+
 </details>
