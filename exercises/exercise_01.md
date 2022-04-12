@@ -13,7 +13,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
     - Writes this value (INT) to a file called `TOTAL_READS`.
 
 <details>
- <summary>Part 1 Hint & Solution
+ <summary> Hint & Solution
  </summary><br />
  
  The total number of reads is captured as `qc_stats.read_total` in the `fastq-scan` output json file. 
