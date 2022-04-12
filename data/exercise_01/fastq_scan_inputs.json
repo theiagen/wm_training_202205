@@ -1,0 +1,4 @@
+{
+  "fastq_scan_workflow.read1": "{full_path}/wm_training/data/reads/sample01_R1.fastq.gz",
+  "fastq_scan_workflow.read2": "{full_path}/wm_training/data/reads/sample01_R2.fastq.gz"
+}
