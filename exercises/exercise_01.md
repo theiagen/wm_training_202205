@@ -20,7 +20,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
   
 **2.2:** Modify the workflow input file (`~/wm_training/data/hworld/hworld_inputs.json`) to print your name.
 
-**2.2:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write:
+**2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write:
 - A WDL task for calculating the total number of reads in a zipped fastq file using `fastq-scan` 
 - A single-task WDL workflow that incorporates the fastq-scan task above
 
@@ -58,6 +58,25 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  
 ```
  $ cat ~/wm_training/wdl/data/hwrold/hworld_inputs.json
+ {
+  "hworld_workflow.name": "John Doe"
+}
+```
+</details>
+</details>
+
+<details>
+ <summary> 2.3 Hint
+ </summary><br />
+ 
+
+
+  <details>
+    <summary> 2.2 Solution 
+     </summary> 
+ 
+```
+ $ cat ~/wm_training/wdl/tasks/task_fastq
  {
   "hworld_workflow.name": "John Doe"
 }
