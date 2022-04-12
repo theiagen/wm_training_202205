@@ -9,22 +9,20 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
 ## Part 1 - Exploring FASTQ-SCAN
 **1.1:** From your training VM, navigate to the training_data directory and launch an interactive docker container using the StaPH-B Docker Image for fastq-scan version 0.4.4: ```docker run --rm -it -v $PWD:/data staphb/fastq-scan:0.4.4```.
 
-**1.2:**  - Use the [fastq-scan documentation](https://github.com/rpetit3/fastq-scan/blob/master/README.md) to write a one-liner that:
-    - Calcaultes the total number of reads within a gzipped fastq file and 
-    - Writes this value (INT) to a file called `TOTAL_READS`.
+**1.2:** Use the [fastq-scan documentation](https://github.com/rpetit3/fastq-scan/blob/master/README.md) to write a one-liner that:
+- Calcaultes the total number of reads within a gzipped fastq file and 
+- Writes this value (INT) to a file called `TOTAL_READS`.
 
 ## Part 2 - Writing a WDL Task and Workflow<br />
 
 **2.1:** Use the `miniwdl run` command to execute the `hworld` WDL workflow hosted in this repository:<br />
   ` $ miniwdl run ~/wm_training/wdl/workflows/wf_hworld.wdl -i ~/wm_training/data/hworld/hworld_inputs.json`
   
-  
-  
-**2.2:** Modify the workflow input file (`~/wm_training/data/hworld/hworld_inputs.json`) to print your name, e.g. John Doe.
+**2.2:** Modify the workflow input file (`~/wm_training/data/hworld/hworld_inputs.json`) to print your name.
 
-- Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write:
-   - A WDL task for calculating the total number of reads in a zipped fastq file using `fastq-scan` 
-   - A single-task WDL workflow that incorporates the fastq-scan task above
+**2.2:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write:
+- A WDL task for calculating the total number of reads in a zipped fastq file using `fastq-scan` 
+- A single-task WDL workflow that incorporates the fastq-scan task above
 
 
 
