@@ -15,7 +15,6 @@ workflow hworld_workflow {
   }
   output {
     # workflow outputs (output columns in Terra data tables)
-    File hworld_message = hworld_task.hworld_results
-    String hworld_docker = hworld_task.hworld_docker
+    String hworld_results = hworld_task.hworld_results
   }
 }

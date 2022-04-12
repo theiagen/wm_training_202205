@@ -14,12 +14,11 @@ task hworld_task {
   }
   command <<<
     # code block executed 
-    echo "Hello, world. My name is ~{name}." > message2world.txt
+    echo "Hello, world. My name is ~{name}."
   >>>
   output {
     # task outputs
-    File hworld_results = "message2world.txt"
-    String hworld_docker = docker
+    String hworld_results = read_string(stdout())
   }
   runtime {
     # runtime environment
