@@ -17,10 +17,9 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  <summary> Hint & Solution
  </summary><br />
  
- The total number of reads is captured as `qc_stats.read_total` in the `fastq-scan` output json file. 
- Think of ways to parse the fastq-scan output file to capture this value!
+ The total number of reads is captured as `qc_stats.read_total` in the `fastq-scan` output json file. Think of ways to parse the fastq-scan output file to capture this value.
  
- Check out the [StaPH-B fastq-scan Dockerfile](https://github.com/StaPH-B/docker-builds/tree/master/fastq-scan/0.4.4) before seeing the final solution.
+ Check out the [StaPH-B fastq-scan Dockerfile](https://github.com/StaPH-B/docker-builds/tree/master/fastq-scan/0.4.4) before seeing the final solution!
    <details>
    <summary> Solution 
    </summary> 
