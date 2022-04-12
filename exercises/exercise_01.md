@@ -21,7 +21,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  
  Check out the [StaPH-B fastq-scan Dockerfile](https://github.com/StaPH-B/docker-builds/tree/master/fastq-scan/0.4.4) before seeing the final solution.
    <details>
-   <summary> Part 1 Solution 
+   <summary> Solution 
    </summary> 
    
    One approach could be to concatenate the read file, pipe it into fastq-scan, and then pipe fastq-scan output into the `jq` tool to query the json output for `qc_stats.read_total`:<br />
