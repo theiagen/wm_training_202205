@@ -44,9 +44,10 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  {
   "hworld_workflow.name": "John Doe"
 }
+```
 
 </details>
 
 3. Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write:
- 1. A WDL task for calculating the total number of reads in a zipped fastq file using `fastq-scan`.
- 2. A single-task WDL workflow that incorporates the fastq-scan task above
+   - A WDL task for calculating the total number of reads in a zipped fastq file using `fastq-scan` 
+   - A single-task WDL workflow that incorporates the fastq-scan task above
