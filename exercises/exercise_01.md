@@ -44,6 +44,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  {
   "hworld_workflow.name": "John Doe"
 }
+
 </details>
 
 3. Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write:
