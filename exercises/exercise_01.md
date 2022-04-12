@@ -10,7 +10,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
 1. From your training VM, navigate to the training_data directory and launch an interactive docker container using the StaPH-B Docker Image for fastq-scan version 0.4.4: ```docker run --rm -it -v $PWD:/data staphb/fastq-scan:0.4.4```.
 
 2. Use the [fastq-scan documentation](https://github.com/rpetit3/fastq-scan/blob/master/README.md) to write a one-liner that:
-    - Calcaultes the total number of reads within a fastq file and 
+    - Calcaultes the total number of reads within a gzipped fastq file and 
     - Writes this value (INT) to a file called `TOTAL_READS`.
 
 <details>
@@ -24,9 +24,9 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
    <summary> Solution 
    </summary> 
    
-   One approach could be to concatenate the read file, pipe it into fastq-scan, and then pipe fastq-scan output into the `jq` tool to query the json output for `qc_stats.read_total`:<br />
+   One approach could be to concatenate the gzipped fastq file with `zcat`, pipe it into fastq-scan, and then pipe fastq-scan json output into the `jq` tool to query for `qc_stats.read_total`:<br />
    
-    $ cat {read_file} |  fastq-scan | jq .qc_stats.read_total > TOTAL_READS
+    $ zcat {read_file} |  fastq-scan | jq .qc_stats.read_total > TOTAL_READS
 </details>
 </details>
 
