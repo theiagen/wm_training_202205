@@ -1,6 +1,6 @@
 # Exercise 01: Creating a WDL Workflow
 
-In this exercise, trainees will learn how to create WDL tasks and workflows and utilize miniwdl to run these workflows locally. 
+In this exercise, trainees will learn how to write a single-task WDL workflow and how to use miniwdl to run this workflow locally. 
 
 **Exercise Objective**: Create a WDL workflow to capture the total number of reads in a fastq file using fastq-scan. 
 - Part 1: Exploring fastq-scan to calculate total numbe of reads in a fastq file
@@ -8,7 +8,9 @@ In this exercise, trainees will learn how to create WDL tasks and workflows and 
 
 ## Part 1 - Exploring FASTQ-SCAN
 1. From your training VM, navigate to the training_data directory and launch an interactive docker container using the StaPH-B Docker Image for fastq-scan version 0.4.4: ```docker run --rm -it -v $PWD:/data staphb/fastq-scan:04.4```.
-2. Use the [fastq-scan documentation](https://github.com/rpetit3/fastq-scan/blob/master/README.md) to write a one-liner to calcaulte the total number of reads within a fastq file and writes this value to a file.
+2. Use the [fastq-scan documentation](https://github.com/rpetit3/fastq-scan/blob/master/README.md) to write a one-liner that:
+- Calcaultes the total number of reads within a fastq file and 
+- Writes this value (INT) to a file called `TOTAL_READS`.
 
 <details>
  <summary>Part 1 Hint & Solution
