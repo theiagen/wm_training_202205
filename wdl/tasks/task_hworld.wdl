@@ -3,7 +3,7 @@ version 1.0
 task hworld_task {
   meta {
     # task metadata
-    description: "Description about my task file"
+    description: "Hello world task file"
   }
   input {
     # task inputs
@@ -14,11 +14,11 @@ task hworld_task {
   }
   command <<<
     # code block executed 
-    echo "Hello, world. My name is ~{name}."
+    echo "Hello, world. My name is ~{name}." > HWORLD_OUT
   >>>
   output {
     # task outputs
-    String hworld_results = read_string(stdout())
+    String hworld_results = read_string("HWORLD_OUT")
   }
   runtime {
     # runtime environment
