@@ -9,8 +9,8 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
 ## Part 1 - Exploring FASTQ-SCAN
 1. From your training VM, navigate to the training_data directory and launch an interactive docker container using the StaPH-B Docker Image for fastq-scan version 0.4.4: ```docker run --rm -it -v $PWD:/data staphb/fastq-scan:04.4```.
 2. Use the [fastq-scan documentation](https://github.com/rpetit3/fastq-scan/blob/master/README.md) to write a one-liner that:
-  - Calcaultes the total number of reads within a fastq file and 
-  - Writes this value (INT) to a file called `TOTAL_READS`.
+    - Calcaultes the total number of reads within a fastq file and 
+    - Writes this value (INT) to a file called `TOTAL_READS`.
 
 <details>
  <summary>Part 1 Hint & Solution
