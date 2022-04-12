@@ -11,7 +11,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
 
 **1.2:** Use the [fastq-scan documentation](https://github.com/rpetit3/fastq-scan/blob/master/README.md) to write a one-liner that:
 - Calcaultes the total number of reads within a gzipped fastq file and 
-- Writes this value (INT) to a file called `TOTAL_READS`.
+- Writes this value (INT) to a file called `TOTAL_READS`
 
 ## Part 2 - Writing a WDL Task and Workflow<br />
 
@@ -23,8 +23,6 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
 **2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write:
 - A WDL task for calculating the total number of reads in a zipped fastq file using `fastq-scan` 
 - A single-task WDL workflow that incorporates the fastq-scan task above
-
-
 
 
 ## Hints and Solutions
@@ -69,6 +67,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  <summary> 2.3 Hint
  </summary><br />
  
+  
 
 
   <details>
@@ -76,7 +75,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
      </summary> 
  
 ```
- $ cat ~/wm_training/wdl/tasks/task_fastq
+ $ cat ~/wm_training/wdl/tasks/task_fastq_scan.wdl
  {
   "hworld_workflow.name": "John Doe"
 }
