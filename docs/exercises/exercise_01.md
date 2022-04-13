@@ -3,7 +3,7 @@
 In this exercise, trainees will learn how to write a single-task WDL workflow and how to use miniwdl to run this workflow locally. 
 
 **Exercise Objective**: Create a WDL workflow to capture the total number of reads in a fastq file using fastq-scan. 
-- Part 1: Exploring fastq-scan to calculate total numbe of reads in a fastq file
+- Part 1: Exploring fastq-scan to calculate total number of reads in a fastq file
 - Part 2: Writing a WDL task and workflow to capture this functionality  
 
 ## Part 1 - Exploring FASTQ-SCAN
