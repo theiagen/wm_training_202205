@@ -56,13 +56,15 @@ One approach could be to concatenate the gzipped fastq file with `zcat`, pipe it
 
 <details>
   <summary> 2.2 Solution 
-   </summary> 
- 
+   </summary><br />
+
+   By modifying the string `"Kevin G. Libuit"` the input file can be modified to print any name, *e.g.*:<br />
+
 ```
  $ cat ~/wm_training/wdl/data/hwrold/hworld_inputs.json
  {
   "hworld_workflow.name": "John Doe"
-}
+ }
 ```
 
 </details>
