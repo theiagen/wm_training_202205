@@ -2,7 +2,7 @@
 
 In this exercise, trainees will learn how to chain multiple tasks in a single WDL workflow. 
 
-**Exercise Objective**: Create a WDL workflow to capture the total number of reads in a fastq file using fastq-scan. 
+**Exercise Objective**: Create a WDL workflow that calculates the total number of reads in a fastq file after read trimming. 
 - Part 1: Exploring the foo-bar_workflow to understand task interactions within a WDL workflow
 - Part 2: Writing a multi-task WDL workflow with `trimmomatic` and `fastq-scan`
 
@@ -60,7 +60,7 @@ workflow foobar_workflow {
  </summary><br />
  
  Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository to find out:<br />
- 
+
    `$ miniwdl run ~/wm_training/wdl/workflows/wf_foobar.wdl -i ~/wm_training/data/exercise_02/foobar_inputs.json`
 
 </details>
