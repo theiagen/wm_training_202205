@@ -19,10 +19,17 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
   ` $ miniwdl run ~/wm_training/wdl/workflows/wf_hworld.wdl -i ~/wm_training/data/hworld/hworld_inputs.json`
 
 <p align="center">
-  <img src="../images/hworld_workflow.png" width="400" class="center">
+  <img src="../images/hworld_workflow.png" width="900" class="center">
 </p>
 
 **2.2:** Modify the workflow input file (`~/wm_training/data/hworld/hworld_inputs.json`) to print your name.
+
+```
+ $ cat ~/wm_training/wdl/data/hwrold/hworld_inputs.json
+ {
+  "hworld_workflow.name": "Kevin G. Libuit"
+ }
+```
 
 **2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write a single-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` to calcaulte the total reads within each fastq file:
 
