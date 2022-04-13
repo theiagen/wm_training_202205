@@ -1,24 +1,25 @@
 version 1.0
 
-task hworld_task {
+task foo_task {
   meta {
     # task metadata
-    description: "Hello world task file"
+    description: "Foo task file: multiply some number by 3"
   }
   input {
     # task inputs
-    String name
+    Int some_number
     String docker = "quay.io/theiagen/utility:1.2"
     Int cpu = 2
     Int memory = 2
   }
   command <<<
     # code block executed 
-    echo "Hello, world. My name is ~{name}." > HWORLD_OUT
+    let "foo_number = ~{some_number} * 3"
+    echo $foo_number | tee FOO_NUMBER
   >>>
   output {
     # task outputs
-    String hworld_results = read_string("HWORLD_OUT")
+    Int foo_number = read_string("FOO_NUMBER")
   }
   runtime {
     # runtime environment

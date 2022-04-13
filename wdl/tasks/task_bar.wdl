@@ -1,24 +1,25 @@
 version 1.0
 
-task hworld_task {
+task bar_task {
   meta {
     # task metadata
-    description: "Hello world task file"
+    description: "Bar task file: subtract 25 from some number"
   }
   input {
     # task inputs
-    String name
+    Int some_number
     String docker = "quay.io/theiagen/utility:1.2"
     Int cpu = 2
     Int memory = 2
   }
   command <<<
     # code block executed 
-    echo "Hello, world. My name is ~{name}." > HWORLD_OUT
+    let "bar_number = ~{some_number} - 25"
+    echo $bar_number | tee BAR_NUMBER
   >>>
   output {
     # task outputs
-    String hworld_results = read_string("HWORLD_OUT")
+    Int bar_number = read_string("BAR_NUMBER")
   }
   runtime {
     # runtime environment
