@@ -9,9 +9,9 @@ In this exercise, trainees will learn how to chain multiple tasks in a single WD
 ## Part 1 - Exploring the FOO-BAR WDL Workflow
 **1.1:** If the `foo_task` multiplies `some_number` by `3` and the `bar_task` subtracts `25` from `some_number`, what will the workflow outputs of the `foobar_workflow` be if `some_number` = `5`?
 
-- `foo_number`: __
-- `bar_number`: __
-- `second_foo_number`: __
+- `foo_number`: ____
+- `bar_number`: ____
+- `second_foo_number`: ____
 
 ```
 $ cat wm_training/wdl/workflows/wf_foobar.wdl 
@@ -48,27 +48,25 @@ workflow foobar_workflow {
 }
 ```
 
--  Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository to find out:<br />
-  `$ miniwdl run ~/wm_training/wdl/workflows/wf_foobar.wdl -i ~/wm_training/data/exercise_02/foobar_inputs.json`
 
 ## Hints and Solutions
 <details>
- <summary> 1.2 Hint
+ <summary> 1.1 Hint
  </summary><br />
  
- The total number of reads is captured as `qc_stats.read_total` in the `fastq-scan` output json file. Think of ways to parse the fastq-scan output file to capture this value.
- 
- Check out the [fastq-scan StaPH-B Docker Builds README.md](https://github.com/StaPH-B/docker-builds/tree/master/fastq-scan/0.4.4) before seeing the final solution!
+ Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository to find out:<br />
+   `$ miniwdl run ~/wm_training/wdl/workflows/wf_foobar.wdl -i ~/wm_training/data/exercise_02/foobar_inputs.json`
 
 </details>
 
 <details>
- <summary> 1.2 Solution 
+ <summary> 1.1 Solution 
  </summary><br />   
 
-One approach could be to concatenate the gzipped fastq file with `zcat`, pipe it into fastq-scan, and then pipe fastq-scan json output into the `jq` tool to query for `qc_stats.read_total`:<br />
-   
-`$ zcat {read_file} |  fastq-scan | jq .qc_stats.read_total > TOTAL_READS`
+If `some_number` = `5`:
+ - `foo_number` = `5 * 3` = `15`
+ - `bar_number` = `15 - 25` = `-10`
+ - `second_foo_number`: = `-10 * 3` = `-30`
 
 </details>
 
