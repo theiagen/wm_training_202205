@@ -1,5 +1,15 @@
+-----
+
+<p align="center">  
+  <b>NOTE: THESE TRAININGS RESOURCES ARE UNDER ACTIVE DEVELOPMENT </b>
+
+</p>
+
+-----
+
 # Workflow Management Solutions for Public Health Bioinformatics
 Theiagen Genomics repository for workshop resources, code templates, and exercise materails 
+
 
 ## Course Overview
 This intermediate-level bioinformatics training workshop will provide conceptual and applied training for understanding and utilizing workflow management solutions (e.g. WDL and Nextflow) for interoperable, reproducible, and accessible genomic analysis.
