@@ -10,6 +10,7 @@ In this exercise, trainees will learn how to chain multiple tasks in a single WD
 **1.1:** If the `foo_task` multiplies `some_number` by `3` and the `bar_task` subtracts `25` from `some_number`, what will the outputs of the `foobar_workflow` be if `some_number` = `5`?
 
 ```
+$ cat wm_training/wdl/workflows/wf_foobar.wdl 
 version 1.0
 
 # import block
@@ -44,7 +45,7 @@ workflow foobar_workflow {
 }
 ```
 
--  Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository:<br />
+-  Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository to find out:<br />
   `$ miniwdl run ~/wm_training/wdl/workflows/wf_foobar.wdl -i ~/wm_training/data/exercise_02/foobar_inputs.json`
 
 ## Hints and Solutions
