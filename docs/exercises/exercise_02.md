@@ -2,7 +2,7 @@
 
 In this exercise, trainees will learn how to chain multiple tasks in a single WDL workflow. 
 
-**Exercise Objective**: Create a WDL workflow that calculates the total number of reads in a fastq file after read trimming. 
+**Exercise Objective**: Create a WDL workflow that calculates the total number of reads in a fastq file before and after read trimming. 
 - Part 1: Exploring the foo-bar_workflow to understand task interactions within a WDL workflow
 - Part 2: Writing a multi-task WDL workflow with `trimmomatic` and `fastq-scan`
 
@@ -49,10 +49,15 @@ workflow foobar_workflow {
 ```
 
 ## Part 2 - Writing a Multi-Task WDL workflow
-**1.2:** From your training VM, launch an interactive docker container using the StaPH-B Docker Image for trimmomatic version 0.39: `docker run --rm -it -v ~/wm_training/data/:/data staphb/trimmomatic:0.39`.
+**2.1:** From your training VM, launch an interactive docker container using the StaPH-B Docker Image for trimmomatic version 0.39: `docker run --rm -it -v ~/wm_training/data/:/data staphb/trimmomatic:0.39`.
 
-**1.2:** Use the [trimmomatic documentation](http://www.usadellab.org/cms/?page=trimmomatic) to write a `trimmomatic_task` file that trims paired-end read data; `minlen`, `window_size`, and `required_quality` should be modifiable input attributes (default: `minen` = `75`, `window_size` = `10`, `required_quality` = `20`)
+**2.2:** Use the [trimmomatic documentation](http://www.usadellab.org/cms/?page=trimmomatic) to write a `trimmomatic_task` file that trims paired-end read data; `minlen`, `window_size`, and `required_quality` should be modifiable input attributes (default: `minen` = `75`, `window_size` = `10`, `required_quality` = `20`)
 
+**2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write a multi-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` and `trimmomatic` to calcaulte the total reads within each fastq file before and after tirmming:
+
+<p align="center">
+  <img src="../images/scan-n-trim_workflow.png" width="400" class="center">
+</p>
 
 ## Hints and Solutions
 <details>
