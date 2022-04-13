@@ -4,7 +4,6 @@ version 1.0
 import "../tasks/task_foo.wdl" as foo
 import "../tasks/task_bar.wdl" as bar
 
-
 workflow foobar_workflow {
   input {
     # workflow inputs
