@@ -53,10 +53,10 @@ workflow foobar_workflow {
 
 **2.2:** Use the [trimmomatic documentation](http://www.usadellab.org/cms/?page=trimmomatic) to write a `trimmomatic_task` file that trims paired-end read data; `minlen`, `window_size`, and `required_quality` should be modifiable input attributes (default: `minen` = `75`, `window_size` = `10`, `required_quality` = `20`)
 
-**2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write a multi-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` and `trimmomatic` to calcaulte the total reads within each fastq file before and after tirmming:
+**2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write a multi-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` and `trimmomatic` to calcaulte the total reads within each fastq file before and after read tirmming:
 
 <p align="center">
-  <img src="../images/scan-n-trim_workflow.png" width="400" class="center">
+  <img src="../images/scan-n-trim_workflow.png" width="600" class="center">
 </p>
 
 ## Hints and Solutions
