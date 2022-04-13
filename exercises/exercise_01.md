@@ -38,11 +38,11 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
 
 <details>
  <summary> 1.2 Solution 
- </summary> 
- <br />    
+ </summary><br />   
+
 One approach could be to concatenate the gzipped fastq file with `zcat`, pipe it into fastq-scan, and then pipe fastq-scan json output into the `jq` tool to query for `qc_stats.read_total`:<br />
    
- $ zcat {read_file} |  fastq-scan | jq .qc_stats.read_total > TOTAL_READS
+`$ zcat {read_file} |  fastq-scan | jq .qc_stats.read_total > TOTAL_READS`
 
 </details>
 
