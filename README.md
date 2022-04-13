@@ -1,7 +1,7 @@
 # Workflow Management Solutions for Public Health Bioinformatics
 Theiagen Genomics repository for workshop resources, code templates, and exercise materails 
 
-## Repository Content
+## Course Content
 
 ### Exercises
 - [01: Creating a WDL Workflow](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_01.md)
