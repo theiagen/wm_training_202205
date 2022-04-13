@@ -85,8 +85,26 @@ One approach could be to concatenate the gzipped fastq file with `zcat`, pipe it
  <summary> 2.3 Hint
  </summary><br />
  
- HINT
-  
+Here's a potential start to  `task_fastq_scan.wdl` file:
+
+```
+task fastq_scan_task {
+  meta {
+    # task metadata
+    description: "Task to run fastq_scan"
+  }
+  input {
+    # task inputs
+    File read1
+    File read2
+    String docker = "staphb/fastq-scan:0.4.4"
+    Int cpu = 2
+    Int memory = 2
+  }
+```
+
+With these input attributes, how can we construct a `command` block to execute the appropriate `fastq-scan` command? What information needs to be defined in the `runtime` block?
+
 </details>
 
 <details>
