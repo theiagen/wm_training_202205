@@ -16,7 +16,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
 ## Part 2 - Writing a WDL Task and Workflow<br />
 
 **2.1:** Use the `miniwdl run` command to execute the `hworld` WDL workflow hosted in this repository:<br />
-  ` $ miniwdl run ~/wm_training/wdl/workflows/wf_hworld.wdl -i ~/wm_training/data/hworld/hworld_inputs.json`
+  `$ miniwdl run ~/wm_training/wdl/workflows/wf_hworld.wdl -i ~/wm_training/data/exercise_01/hworld_inputs.json`
 
 <p align="center">
   <img src="../images/hworld_workflow.png" width="900" class="center">
