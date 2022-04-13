@@ -7,7 +7,7 @@ In this exercise, trainees will learn how to chain multiple tasks in a single WD
 - Part 2: Writing a WDL task for `trimmomatic` and a workflow to calculate total reads before and after read trimming
 
 ## Part 1 - Exploring the FOO-BAR WDL Workflow
-**1.1:** If the `foo_task` multiplies some number by 3 and the `bar_task` subtracts 25 from some number, what will the outputs of the `foobar_workflow` be?
+**1.1:** If the `foo_task` multiplies `some_number` by `3` and the `bar_task` subtracts `25` from `some_number`, what will the outputs of the `foobar_workflow` be if `some_number` = `5`?
 
 ```
 version 1.0
