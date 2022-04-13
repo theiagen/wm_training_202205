@@ -78,7 +78,7 @@ One approach could be to concatenate the gzipped fastq file with `zcat`, pipe it
 </details>
 
 <details>
-  <summary> 2.2 Solution 
+  <summary> 2.3 Solution 
   </summary><br />
   
 Check the following files in the [`solutions` branch](https://github.com/theiagen/wm_training/tree/solutions) of this repository: 
