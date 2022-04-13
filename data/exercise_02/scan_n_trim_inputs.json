@@ -1,0 +1,4 @@
+{
+  "scan_n_trim_workflow.read1": "/home/kevin_libuit/wm_training/data/reads/sample01_R1.fastq.gz",
+  "scan_n_trim_workflow.read2": "/home/kevin_libuit/wm_training/data/reads/sample01_R2.fastq.gz"
+}
