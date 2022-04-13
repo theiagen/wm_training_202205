@@ -56,7 +56,7 @@ workflow foobar_workflow {
 **2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write a multi-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` and `trimmomatic` to calcaulte the total reads within each fastq file before and after read tirmming:
 
 <p align="center">
-  <img src="../images/scan-n-trim_workflow.png" width="600" class="center">
+  <img src="../images/scan-n-trim_workflow.png" width="800" class="center">
 </p>
 
 ## Hints and Solutions
