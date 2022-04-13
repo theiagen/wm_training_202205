@@ -20,10 +20,9 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
   
 **2.2:** Modify the workflow input file (`~/wm_training/data/hworld/hworld_inputs.json`) to print your name.
 
-**2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write:
-- A single-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` to calcaulte the total reads within each fastq file:
+**2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write a single-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` to calcaulte the total reads within each fastq file:
 
-![fastq-scan_workflow](../images/fastq-scan_workflow | width=100)
+![fastq-scan_workflow](../images/fastq-scan_workflow.png)
 
 ## Hints and Solutions
 <details>
