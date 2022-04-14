@@ -44,7 +44,7 @@ Below is a list of helpful resources that we recommend all trainees review, at l
 
 #### Exercise Resource Requirements
 - Google Cloud Platform Virtual Machines (GCP VMs) with all pre-requisite software installed will be provisioned to all registered trainees. For those interested in recreating this training with their own compute environment, here is a list of resources required for the completion of each exercise:
-  - [`Docker`](https://docs.docker.com/)
+  - [`Docker`](https://docs.docker.com/engine/install/ubuntu/)
   - [`miniwdl`](https://miniwdl.readthedocs.io/en/latest/getting_started.html)
   - [`nextflow`](https://www.nextflow.io/)
  
