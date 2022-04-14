@@ -48,4 +48,4 @@ Below is a list of helpful resources that we recommend all trainees review, at l
   - [`miniwdl`](https://miniwdl.readthedocs.io/en/latest/getting_started.html)
   - [`nextflow`](https://www.nextflow.io/)
  
-*Note: All exercises were developed to run on e2-standard-4 GCP VMs (4 CPUs; 16GB RAM) running Ubuntu 18.04.5*
+*Note: All exercises were developed to run on e2-standard-4 GCP VMs (4 CPUs; 16GB RAM) running Ubuntu 20.04.4 LTS (Focal Fossa)*
