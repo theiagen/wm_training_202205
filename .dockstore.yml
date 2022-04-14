@@ -1,0 +1,5 @@
+version: 1.2
+workflows:
+ - name: Scan-N-Trim
+   subclass: WDL
+   primaryDescriptorPath: wm_training/wdl/workflows/wf_scan_n_trim.wdl
