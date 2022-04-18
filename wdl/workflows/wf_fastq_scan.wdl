@@ -17,7 +17,7 @@ workflow fastq_scan_workflow {
   }
   output {
     # workflow outputs (output columns in Terra data tables)
-    String read1_total_reads = fastq_scan_task.read1_total_reads
-    String read2_total_reads = fastq_scan_task.read2_total_reads
+    Int read1_total_reads = fastq_scan_task.read1_total_reads
+    Int read2_total_reads = fastq_scan_task.read2_total_reads
   }
 }
