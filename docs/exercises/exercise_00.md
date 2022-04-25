@@ -42,7 +42,7 @@ In this exercise, trainees will learn how to write a single-task WDL workflow an
  <summary> 1.2 Hint
  </summary><br />
  
- The total number of reads is captured as `qc_stats.read_total` in the `fastq-scan` output json file. The [`jq`](https://stedolan.github.io/jq/) is a powerful resources included in the `staphb/fastq-scan:0.4.4` [Dockerfile](https://github.com/StaPH-B/docker-builds/blob/master/fastq-scan/0.4.4/Dockerfile#L20) capable of parsing JSON files for specific outputs.
+ The total number of reads is captured as `qc_stats.read_total` in the `fastq-scan` output json file. Think of ways to parse the fastq-scan output file to capture this value.
  
  Check out the [fastq-scan StaPH-B Docker Builds README.md](https://github.com/StaPH-B/docker-builds/tree/master/fastq-scan/0.4.4) before seeing the final solution!
 

@@ -1,7 +1,7 @@
 -----
 
 <p align="center">  
-  <b>NOTE: THESE TRAININGS RESOURCES ARE UNDER ACTIVE DEVELOPMENT </b>
+  <b>NOTE: THESE TRAININGS RESOURCES ARE BEING PROVIDED TO ITS FIRST COHORTS AND UNDER ACTIVE DEVELOPMENT </b>
 
 </p>
 
@@ -39,6 +39,7 @@ Below is a list of helpful resources that we recommend all trainees review, at l
 ## Course Content
 
 ### Exercises
+- [00: Setting up your environment](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_00.md)
 - [01: Creating a WDL Workflow](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_01.md)
 - [02: Multi-Task WDL Workflows](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_02.md)
 
