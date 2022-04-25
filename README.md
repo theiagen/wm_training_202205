@@ -1,5 +1,15 @@
+-----
+
+<p align="center">  
+  <b>NOTE: THESE TRAININGS RESOURCES ARE BEING PROVIDED TO ITS FIRST COHORTS AND UNDER ACTIVE DEVELOPMENT </b>
+
+</p>
+
+-----
+
 # Workflow Management Solutions for Public Health Bioinformatics
 Theiagen Genomics repository for workshop resources, code templates, and exercise materails 
+
 
 ## Course Overview
 This intermediate-level bioinformatics training workshop will provide conceptual and applied training for understanding and utilizing workflow management solutions (e.g. WDL and Nextflow) for interoperable, reproducible, and accessible genomic analysis.
@@ -29,13 +39,14 @@ Below is a list of helpful resources that we recommend all trainees review, at l
 ## Course Content
 
 ### Exercises
+- [00: Setting up your environment](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_00.md)
 - [01: Creating a WDL Workflow](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_01.md)
 - [02: Multi-Task WDL Workflows](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_02.md)
 
 #### Exercise Resource Requirements
 - Google Cloud Platform Virtual Machines (GCP VMs) with all pre-requisite software installed will be provisioned to all registered trainees. For those interested in recreating this training with their own compute environment, here is a list of resources required for the completion of each exercise:
-  - [`Docker`](https://docs.docker.com/)
+  - [`Docker`](https://docs.docker.com/engine/install/ubuntu/)
   - [`miniwdl`](https://miniwdl.readthedocs.io/en/latest/getting_started.html)
   - [`nextflow`](https://www.nextflow.io/)
  
-*Note: All exercises were developed to run on e2-standard-4 GCP VMs (4 CPUs; 16GB RAM) running Ubuntu 18.04.5*
+*Note: All exercises were developed to run on e2-standard-4 GCP VMs (4 CPUs; 16GB RAM) running Ubuntu 20.04.4 LTS (Focal Fossa)*

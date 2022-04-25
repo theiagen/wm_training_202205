@@ -51,9 +51,9 @@ workflow foobar_workflow {
 ## Part 2 - Writing a Multi-Task WDL workflow
 **2.1:** From your training VM, launch an interactive docker container using the StaPH-B Docker Image for trimmomatic version 0.39: `docker run --rm -it -v ~/wm_training/data/:/data staphb/trimmomatic:0.39`.
 
-**2.2:** Use the [trimmomatic documentation](http://www.usadellab.org/cms/?page=trimmomatic) to write a `trimmomatic_task` file that trims paired-end read data; `minlen`, `window_size`, and `required_quality` should be modifiable input attributes (default: `minen` = `75`, `window_size` = `10`, `required_quality` = `20`)
+**2.2:** Use the [trimmomatic documentation](http://www.usadellab.org/cms/?page=trimmomatic) to write a `trimmomatic_task` file that trims paired-end read data; `minlen`, `window_size`, and `required_quality` should be modifiable input attributes (default: `minlen` = `75`, `window_size` = `10`, `required_quality` = `20`)
 
-**2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write a multi-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` and `trimmomatic` to calcaulte the total reads within each fastq file before and after read tirmming:
+**2.3:** Use the WDL workflow and task template files (`~/wm_training/wdl/workflows/wf_template.wdl` & `~/wm_training/wdl/tasks/wf_task.wdl`) to write a multi-task WDL workflow that takes in paired-end fastq files (`read1` & `read2`) and uses `fastq-scan` and `trimmomatic` to calculate the total paired reads within each fastq file before and after read tirmming:
 
 <p align="center">
   <img src="../images/scan-n-trim_workflow.png" width="800" class="center">
