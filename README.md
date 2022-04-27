@@ -47,7 +47,7 @@ Below is a list of helpful resources that we recommend all trainees review, at l
 **Week 2: Deep Dive into WDL Workflows**
 - [Exercise 02: Multi-Task WDL Workflows](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_02.md)
 
-#### Exercise Resource Requirements
+### Exercise Resource Requirements
 - Google Cloud Platform Virtual Machines (GCP VMs) with all pre-requisite software installed will be provisioned to all registered trainees. For those interested in recreating this training with their own compute environment, here is a list of resources required for the completion of each exercise:
   - [`Docker`](https://docs.docker.com/engine/install/ubuntu/)
   - [`miniwdl`](https://miniwdl.readthedocs.io/en/latest/getting_started.html)
