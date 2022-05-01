@@ -28,9 +28,9 @@ workflow scan_n_trim_workflow {
   }
   output {
     # workflow outputs (output columns in Terra data tables)
-    String read1_raw_total_reads = fastq_scan_raw.read1_total_reads
-    String read2_raw_total_reads = fastq_scan_raw.read2_total_reads
-    String read1_clean_total_reads = fastq_scan_clean.read1_total_reads
-    String read2_clean_total_reads = fastq_scan_clean.read2_total_reads
+    Int read1_raw_total_reads = fastq_scan_raw.read1_total_reads
+    Int read2_raw_total_reads = fastq_scan_raw.read2_total_reads
+    Int read1_clean_total_reads = fastq_scan_clean.read1_total_reads
+    Int read2_clean_total_reads = fastq_scan_clean.read2_total_reads
   }
 }
