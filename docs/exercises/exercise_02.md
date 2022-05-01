@@ -8,19 +8,91 @@ In this exercise, trainees will learn how to chain multiple tasks in a single WD
 
 ## Part 1 - Exploring the FOO-BAR WDL Workflow
 **1.1:** If the `foo_task` multiplies `some_number` by `3` and the `bar_task` subtracts `25` from `some_number`, what will the workflow outputs of the `foobar_workflow` be if `some_number` = `5`?
-
-- `foo_number`: ____
-- `bar_number`: ____
-- `second_foo_number`: ____
-
+<details>
+  <summary> foo_task
+  </summary><br />
+  
 ```
-$ cat wm_training/wdl/workflows/wf_foobar.wdl 
-version 1.0
+task foo_task {
+  meta {
+    # task metadata
+    description: "Foo task file: multiply some number by 3"
+  }
+  input {
+    # task inputs
+    Int some_number
+    String docker = "quay.io/theiagen/utility:1.2"
+    Int cpu = 2
+    Int memory = 2
+  }
+  command <<<
+    # code block executed 
+    let "foo_number = ~{some_number} * 3"
+    echo $foo_number | tee FOO_NUMBER
+  >>>
+  output {
+    # task outputs
+    Int foo_number = read_string("FOO_NUMBER")
+  }
+  runtime {
+    # runtime environment
+    docker: "~{docker}"
+    memory: "~{memory} GB"
+    cpu: cpu
+    disks: "local-disk 50 SSD"
+    preemptible: 0
+  }
+}
+```
 
-# import block
-import "../tasks/task_foo.wdl" as foo
-import "../tasks/task_bar.wdl" as bar
+</details>
+  
+<details>
+  <summary> bar_task
+  </summary><br />
+  
+```
+task bar_task {
+  meta {
+    # task metadata
+    description: "Bar task file: subtract 25 from some number"
+  }
+  input {
+    # task inputs
+    Int some_number
+    String docker = "quay.io/theiagen/utility:1.2"
+    Int cpu = 2
+    Int memory = 2
+  }
+  command <<<
+    # code block executed 
+    let "bar_number = ~{some_number} - 25"
+    echo $bar_number | tee BAR_NUMBER
+  >>>
+  output {
+    # task outputs
+    Int bar_number = read_string("BAR_NUMBER")
+  }
+  runtime {
+    # runtime environment
+    docker: "~{docker}"
+    memory: "~{memory} GB"
+    cpu: cpu
+    disks: "local-disk 50 SSD"
+    preemptible: 0
+  }
+}
+```
 
+</details>
+  
+</details>
+  
+<details>
+  <summary> foobar_workflow
+  </summary><br />
+  
+```
 workflow foobar_workflow {
   input {
     # workflow inputs
@@ -47,6 +119,13 @@ workflow foobar_workflow {
   }
 }
 ```
+
+</details>
+
+- `foo_number`: ____
+- `bar_number`: ____
+- `second_foo_number`: ____
+
 
 ## Part 2 - Writing a Multi-Task WDL workflow
 **2.1:** From your training VM, launch an interactive docker container using the StaPH-B Docker Image for trimmomatic version 0.39: `docker run --rm -it -v ~/wm_training/data/:/data staphb/trimmomatic:0.39`.
