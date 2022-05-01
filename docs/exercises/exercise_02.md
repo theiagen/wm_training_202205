@@ -224,22 +224,34 @@ Check the following files in the [`solutions` branch](https://github.com/theiage
  <summary> 2.3 Hint
  </summary><br />
  
-Here's a potential start to  `task_fastq_scan.wdl` file:
+The `fastq_scan_task` will need to be called twice in this workflow. Examine the `foobar_workflow` to identify how a workflow can be called multiple times while avoiding any `task` namespace conflicts.
 
 ```
-task fastq_scan_task {
-  meta {
-    # task metadata
-    description: "Task to run fastq_scan"
-  }
+workflow foobar_workflow {
   input {
-    # task inputs
-    File read1
-    File read2
-    String docker = "staphb/fastq-scan:0.4.4"
-    Int cpu = 2
-    Int memory = 2
+    # workflow inputs
+    Int some_number
   }
+  # tasks and/or subworkflows to execute
+  call foo.foo_task {
+    input:
+      some_number = some_number
+  }
+  call bar.bar_task {
+    input:
+      some_number = foo_task.foo_number
+  }
+  call foo.foo_task as second_foo_task {
+    input:
+      some_number = bar_task.bar_number
+  }
+  output {
+    # workflow outputs (output columns in Terra data tables)
+    Int foo_number = foo_task.foo_number
+    Int bar_number = bar_task.bar_number
+    Int second_foo_number = second_foo_task.foo_number
+  }
+}
 ```
 
 With these input attributes, how can we construct a `command` block to execute the appropriate `fastq-scan` command? What information needs to be defined in the `runtime` block?
@@ -251,7 +263,6 @@ With these input attributes, how can we construct a `command` block to execute t
   </summary><br />
   
 Check the following files in the [`solutions` branch](https://github.com/theiagen/wm_training/tree/solutions) of this repository: 
-    - [`wm_training/wdl/tasks/task_fastq_scan.wdl`](https://github.com/theiagen/wm_training/blob/solutions/wdl/tasks/task_fastq_scan.wdl)
-    - [`wm_training/wdl/workflows/wf_fastq_scan.wdl`](https://github.com/theiagen/wm_training/blob/solutions/wdl/workflows/wf_fastq_scan.wdl)
-
+  - [`wm_training/blob/solutions/wdl/workflows/wf_scan_n_trim`](https://github.com/theiagen/wm_training/blob/solutions/wdl/workflows/wf_scan_n_trim.wdl)
+  
 </details>
