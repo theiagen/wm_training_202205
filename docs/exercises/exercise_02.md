@@ -203,7 +203,9 @@ workflow foobar_workflow {
  <summary> 2.2 Hint
  </summary><br />
  
- How does the hworld_inputs.json file define the `name` input attribute?
+Examine how this problem is addressed in other Theiagen GitHub repositories: 
+  - [Public Health Bacterial Genomics](https://github.com/theiagen/public_health_bacterial_genomics/blob/main/tasks/quality_control/task_trimmomatic.wdl#L3)
+  - [Public Health Viral Genomics](https://github.com/theiagen/public_health_viral_genomics/blob/main/tasks/task_read_clean.wdl#L157)
 
 </details>
 
@@ -211,15 +213,11 @@ workflow foobar_workflow {
   <summary> 2.2 Solution 
    </summary><br />
 
-   By modifying the string `"Kevin G. Libuit"` the input file can be modified to print any name, *e.g.*:<br />
-
-```
- $ cat ~/wm_training/wdl/data/hwrold/hworld_inputs.json
- {
-  "hworld_workflow.name": "John Doe"
- }
-```
-
+Check the following files in the [`solutions` branch](https://github.com/theiagen/wm_training/tree/solutions) of this repository:
+  - [`wm_training/wdl/tasks/task_trimmomatic.wdl`](https://github.com/theiagen/wm_training/blob/solutions/wdl/tasks/task_trimmomatic.wdl)
+  
+  
+  
 </details>
 
 <details>
