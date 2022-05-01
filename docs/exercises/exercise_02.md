@@ -143,21 +143,60 @@ workflow foobar_workflow {
  <summary> 1.1 Hint
  </summary><br />
  
- Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository to find out:<br />
+ Examine the `foobar_workflow` to see how the `some_number` input attribute of each workflow gets set, e.g.
 
-   `$ miniwdl run ~/wm_training/wdl/workflows/wf_foobar.wdl -i ~/wm_training/data/exercise_02/foobar_inputs.json`
-
+  ```
+   call foo.foo_task as second_foo_task {
+    input:
+      some_number = bar_task.bar_number
+  }
+  ```
+  
+  How might this impact the final workflow output?
 </details>
 
 <details>
  <summary> 1.1 Solution 
  </summary><br />   
+  
+ Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository to find out:<br />
 
+   `$ miniwdl run ~/wm_training/wdl/workflows/wf_foobar.wdl some_number=5`
+  
 If `some_number` = `5`:
  - `foo_number` = `5 * 3` = `15`
  - `bar_number` = `15 - 25` = `-10`
  - `second_foo_number`: = `-10 * 3` = `-30`
 
+  
+  ```
+workflow foobar_workflow {
+  input {
+    # workflow inputs
+    Int some_number = 5
+  }
+  # tasks and/or subworkflows to execute
+  call foo.foo_task {
+    input:
+      some_number = some_number # some_number = 5
+  }
+  call bar.bar_task {
+    input:
+      some_number = foo_task.foo_number # foo_task.foo_number = 5 * 3 = 15
+  }
+  call foo.foo_task as second_foo_task {
+    input:
+      some_number = bar_task.bar_number # bar_task.bar_number = 15 - 25 = -10
+  }
+  output {
+    # workflow outputs (output columns in Terra data tables)
+    Int foo_number = foo_task.foo_number # foo_task.foo_number = 5 * 3 = 15
+    Int bar_number = bar_task.bar_number # bar_task.bar_number = 15 - 25 = -10
+    Int second_foo_number = second_foo_task.foo_number # bar_task.bar_number = -10 * 3 = -30
+  }
+}
+  ```
+  
 </details>
 
 <details>
