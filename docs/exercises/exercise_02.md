@@ -143,28 +143,69 @@ workflow foobar_workflow {
  <summary> 1.1 Hint
  </summary><br />
  
- Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository to find out:<br />
+ Examine the `foobar_workflow` to see how the `some_number` input attribute of each workflow gets set, e.g.
 
-   `$ miniwdl run ~/wm_training/wdl/workflows/wf_foobar.wdl -i ~/wm_training/data/exercise_02/foobar_inputs.json`
-
+  ```
+   call foo.foo_task as second_foo_task {
+    input:
+      some_number = bar_task.bar_number
+  }
+  ```
+  
+  How might this impact the final workflow output?
 </details>
 
 <details>
  <summary> 1.1 Solution 
  </summary><br />   
+  
+ Use the `miniwdl run` command to execute the `foobar` WDL workflow hosted in this repository to find out:<br />
 
+   `$ miniwdl run ~/wm_training/wdl/workflows/wf_foobar.wdl some_number=5`
+  
 If `some_number` = `5`:
  - `foo_number` = `5 * 3` = `15`
  - `bar_number` = `15 - 25` = `-10`
  - `second_foo_number`: = `-10 * 3` = `-30`
 
+  
+  ```
+workflow foobar_workflow {
+  input {
+    # workflow inputs
+    Int some_number = 5
+  }
+  # tasks and/or subworkflows to execute
+  call foo.foo_task {
+    input:
+      some_number = some_number # some_number = 5
+  }
+  call bar.bar_task {
+    input:
+      some_number = foo_task.foo_number # foo_task.foo_number = 5 * 3 = 15
+  }
+  call foo.foo_task as second_foo_task {
+    input:
+      some_number = bar_task.bar_number # bar_task.bar_number = 15 - 25 = -10
+  }
+  output {
+    # workflow outputs (output columns in Terra data tables)
+    Int foo_number = foo_task.foo_number # foo_task.foo_number = 5 * 3 = 15
+    Int bar_number = bar_task.bar_number # bar_task.bar_number = 15 - 25 = -10
+    Int second_foo_number = second_foo_task.foo_number # bar_task.bar_number = -10 * 3 = -30
+  }
+}
+  ```
+  
 </details>
 
 <details>
  <summary> 2.2 Hint
  </summary><br />
  
- How does the hworld_inputs.json file define the `name` input attribute?
+Examine how this problem is addressed in other Theiagen GitHub repositories: 
+  - [Public Health Bacterial Genomics](https://github.com/theiagen/public_health_bacterial_genomics/blob/main/tasks/quality_control/task_trimmomatic.wdl#L3)
+  - [Public Health Viral Genomics](https://github.com/theiagen/public_health_viral_genomics/blob/main/tasks/task_read_clean.wdl#L157)
 
 </details>
 
@@ -172,37 +213,45 @@ If `some_number` = `5`:
   <summary> 2.2 Solution 
    </summary><br />
 
-   By modifying the string `"Kevin G. Libuit"` the input file can be modified to print any name, *e.g.*:<br />
-
-```
- $ cat ~/wm_training/wdl/data/hwrold/hworld_inputs.json
- {
-  "hworld_workflow.name": "John Doe"
- }
-```
-
+Check the following files in the [`solutions` branch](https://github.com/theiagen/wm_training/tree/solutions) of this repository:
+  - [`wm_training/wdl/tasks/task_trimmomatic.wdl`](https://github.com/theiagen/wm_training/blob/solutions/wdl/tasks/task_trimmomatic.wdl)
+  
+  
+  
 </details>
 
 <details>
  <summary> 2.3 Hint
  </summary><br />
  
-Here's a potential start to  `task_fastq_scan.wdl` file:
+The `fastq_scan_task` will need to be called twice in this workflow. Examine the `foobar_workflow` to identify how a workflow can be called multiple times while avoiding any `task` namespace conflicts.
 
 ```
-task fastq_scan_task {
-  meta {
-    # task metadata
-    description: "Task to run fastq_scan"
-  }
+workflow foobar_workflow {
   input {
-    # task inputs
-    File read1
-    File read2
-    String docker = "staphb/fastq-scan:0.4.4"
-    Int cpu = 2
-    Int memory = 2
+    # workflow inputs
+    Int some_number
   }
+  # tasks and/or subworkflows to execute
+  call foo.foo_task {
+    input:
+      some_number = some_number
+  }
+  call bar.bar_task {
+    input:
+      some_number = foo_task.foo_number
+  }
+  call foo.foo_task as second_foo_task {
+    input:
+      some_number = bar_task.bar_number
+  }
+  output {
+    # workflow outputs (output columns in Terra data tables)
+    Int foo_number = foo_task.foo_number
+    Int bar_number = bar_task.bar_number
+    Int second_foo_number = second_foo_task.foo_number
+  }
+}
 ```
 
 With these input attributes, how can we construct a `command` block to execute the appropriate `fastq-scan` command? What information needs to be defined in the `runtime` block?
@@ -214,7 +263,6 @@ With these input attributes, how can we construct a `command` block to execute t
   </summary><br />
   
 Check the following files in the [`solutions` branch](https://github.com/theiagen/wm_training/tree/solutions) of this repository: 
-    - [`wm_training/wdl/tasks/task_fastq_scan.wdl`](https://github.com/theiagen/wm_training/blob/solutions/wdl/tasks/task_fastq_scan.wdl)
-    - [`wm_training/wdl/workflows/wf_fastq_scan.wdl`](https://github.com/theiagen/wm_training/blob/solutions/wdl/workflows/wf_fastq_scan.wdl)
-
+  - [`wm_training/blob/solutions/wdl/workflows/wf_scan_n_trim`](https://github.com/theiagen/wm_training/blob/solutions/wdl/workflows/wf_scan_n_trim.wdl)
+  
 </details>
