@@ -7,7 +7,7 @@ In this exercise, trainees will learn how to chain multiple tasks in a single WD
 - Part 2: Writing a multi-task WDL workflow with `trimmomatic` and `fastq-scan`
 
 ## Part 1 - Exploring the FOO-BAR WDL Workflow
-**1.1:** If the `foo_task` multiplies `some_number` by `3` and the `bar_task` subtracts `25` from `some_number`, what will the workflow outputs of the `foobar_workflow` be if `some_number` = `5`, `32`, or `198`?
+**1.1:** If the `foo_task` multiplies `some_number` by `3` and the `bar_task` subtracts `25` from `some_number`, what will the workflow outputs of the `foobar_workflow` be if `some_number` = `5`?
 <details>
   <summary> foo_task
   </summary><br />
@@ -126,6 +126,8 @@ workflow foobar_workflow {
 - `bar_number`: ____
 - `second_foo_number`: ____
 
+Use the `miniwdl run` command to execute the `wf_foobar.wdl` workflow hosted in this repository to calculate the value of `foo_number`, `bar_number`, and `second_foo_number` if `some_number` = `17`, `29`, and `184`.
+  
 
 ## Part 2 - Writing a Multi-Task WDL workflow
 **2.1:** From your training VM, launch an interactive docker container using the StaPH-B Docker Image for trimmomatic version 0.39: `docker run --rm -it -v ~/wm_training/data/:/data staphb/trimmomatic:0.39`.
