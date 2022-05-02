@@ -7,7 +7,7 @@ In this exercise, trainees will learn how to chain multiple tasks in a single WD
 - Part 2: Writing a multi-task WDL workflow with `trimmomatic` and `fastq-scan`
 
 ## Part 1 - Exploring the FOO-BAR WDL Workflow
-**1.1:** If the `foo_task` multiplies `some_number` by `3` and the `bar_task` subtracts `25` from `some_number`, what will the workflow outputs of the `foobar_workflow` be if `some_number` = `5`?
+**1.1:** If the `foo_task` multiplies `some_number` by `3` and the `bar_task` subtracts `25` from `some_number`, what will the workflow outputs of the `foobar_workflow` be if `some_number` = `5`, `32`, or `198`?
 <details>
   <summary> foo_task
   </summary><br />
