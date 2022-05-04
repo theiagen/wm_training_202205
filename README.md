@@ -45,6 +45,7 @@ Below is a list of helpful resources that we recommend all trainees review, at l
 - [Exercise 01: Creating a WDL Workflow](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_01.md)
 
 **Week 2: Deep Dive into WDL Workflows**
+- [Lecture Slides](https://github.com/theiagen/wm_training/raw/main/docs/images/week2_slides.pdf)
 - [Exercise 02: Multi-Task WDL Workflows](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_02.md)
 
 ### Exercise Resource Requirements
