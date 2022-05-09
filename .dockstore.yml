@@ -1,0 +1,7 @@
+version: 1.2
+workflows:
+ - name: Fastq_Scan_Trim
+   subclass: WDL
+   primaryDescriptorPath: /wm_training/wdl/workflows/wf_fastq_trimo.wdl
+   testParameterFiles:
+    - empty.json
