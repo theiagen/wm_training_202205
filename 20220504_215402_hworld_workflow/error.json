@@ -1,0 +1,22 @@
+{
+  "error": "RunFailed",
+  "workflow": "hworld_workflow",
+  "run": "hworld_workflow",
+  "dir": "/home/michelle_scribner/wm_training/20220504_215402_hworld_workflow",
+  "cause": {
+    "error": "DockerException",
+    "message": "Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))",
+    "run": "call-hworld_task",
+    "dir": "/home/michelle_scribner/wm_training/20220504_215402_hworld_workflow/call-hworld_task",
+    "pos": {
+      "source": "/home/michelle_scribner/wm_training/wdl/tasks/task_hworld.wdl",
+      "line": 3,
+      "column": 1
+    }
+  },
+  "pos": {
+    "source": "/home/michelle_scribner/wm_training/wdl/workflows/wf_hworld.wdl",
+    "line": 6,
+    "column": 1
+  }
+}

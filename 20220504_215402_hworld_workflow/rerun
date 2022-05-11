@@ -1,0 +1,1 @@
+pushd /home/michelle_scribner/wm_training && miniwdl run /home/michelle_scribner/wm_training/wdl/workflows/wf_hworld.wdl -i /home/michelle_scribner/wm_training/data/exercise_01/hworld_inputs.json; popd
