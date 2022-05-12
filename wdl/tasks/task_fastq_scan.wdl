@@ -34,3 +34,4 @@ task fastq_scan_task {
     preemptible: 0
   }
 }
+
