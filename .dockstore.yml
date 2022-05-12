@@ -5,3 +5,4 @@ workflows:
    primaryDescriptorPath: /wdl/workflows/wf_scan_n_trim.wdl
    testParameterFiles:
     - empty.json
+    
