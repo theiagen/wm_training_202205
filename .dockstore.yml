@@ -1,0 +1,7 @@
+version 1.0
+workflows:
+  - name: Scan-N-Trim DM
+    subclass: WDL
+    primaryDescriptorPath: /wdl/workflows/wf_trimming2.wdl
+    testParameterFiles:
+      - empty.json
