@@ -17,7 +17,7 @@ task trimmomatic_task {
   }
   command <<<
     # code block executed
-    java -jar trimmomatic-0.39.jar PE \
+    trimmomatic PE \
     ~{read1} ~{read2} \
     output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz \
     SLIDINGWINDOW:~{window_size}:~{required_quality} \
