@@ -1,0 +1,39 @@
+version 1.0
+
+# import block
+import "../tasks/task_before.wdl" as before
+import "../tasks/task_trim.wdl" as trim
+import "../tasks/task_after.wdl" as after
+
+
+workflow trimming_workflow {
+  input {
+    # workflow inputs
+    File read1
+    File read2
+  }
+  # tasks and/or subworkflows to execute
+  call before.before_task {
+    input:
+      read1 = read1,
+      read2 = read2
+  }
+  call trim.trim_task {
+    input:
+    sample1 = read1,
+    sample2 = read2
+  }
+  call after.after_task {
+    input:
+    after1 = trim_task.sample1_trimmed,
+    after2 = trim_task.sample2_trimmed
+  }
+  
+  output {
+    # workflow outputs (output columns in Terra data tables)    
+    Int read1_total_reads = before_task.read1_total_reads
+    Int read2_total_reads = before_task.read2_total_reads
+    Int after1_total_reads = after_task. after1_total_reads
+    Int after2_total_reads = after_task.after2_total_reads
+    }
+}
