@@ -25,7 +25,6 @@ task trimmomatic_task {
   >>>
   output {
     # task outputs
-    {DataType} {output_variable} = {output_entity}
     File read1_trimmed = "output_forward_paired.fq.gz"
     File read2_trimmed = "output_reverse_paired.fq.gz" 
   }
