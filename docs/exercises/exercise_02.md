@@ -126,6 +126,8 @@ workflow foobar_workflow {
 - `bar_number`: ____
 - `second_foo_number`: ____
 
+Use the `miniwdl run` command to execute the `wf_foobar.wdl` workflow hosted in this repository to calculate the value of `foo_number`, `bar_number`, and `second_foo_number` if `some_number` = `17`, `29`, and `184`.
+  
 
 ## Part 2 - Writing a Multi-Task WDL workflow
 **2.1:** From your training VM, launch an interactive docker container using the StaPH-B Docker Image for trimmomatic version 0.39: `docker run --rm -it -v ~/wm_training/data/:/data staphb/trimmomatic:0.39`.

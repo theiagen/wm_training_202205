@@ -1,0 +1,41 @@
+version 1.0
+
+task trim_task {
+  meta {
+    # task metadata
+    description: "trimming of fastq files"
+  }
+  input {
+    # task inputs       
+    File sample1
+    File sample2    
+    String docker = "quay.io/staphb/trimmomatic:0.39"
+    Int minlen = 75
+    Int window_size = 10
+    Int required_quality = 20
+    Int threads = 4
+    Int cpu = 4
+    Int memory = 8
+  }
+  command <<<
+    # code block executed
+    trimmomatic PE -threads ~{threads} ~{sample1} ~{sample2} \
+    -baseout trimmed.fastq.gz \
+    ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True \
+    MINLEN:~{minlen} \
+    SLIDINGWINDOW:~{window_size}:~{required_quality}
+  >>>
+  output {
+    # task outputs    
+    File sample1_trimmed = "trimmed_1P.fastq.gz"
+    File sample2_trimmed = "trimmed_2P.fastq.gz"
+  }
+  runtime {
+    # runtime environment
+    docker: "~{docker}"
+    memory: "~{memory} GB"
+    cpu: cpu
+    disks: "local-disk 50 SSD"
+    preemptible: 0    
+  }
+}

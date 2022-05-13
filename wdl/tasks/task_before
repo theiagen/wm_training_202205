@@ -1,0 +1,23 @@
+version 1.0
+
+# import block
+import "../tasks/task_before.wdl" as before
+
+workflow before_workflow {
+  input {
+    # workflow inputs
+    File read1
+    File read2
+  }
+  # tasks and/or subworkflows to execute
+  call before.before_task {
+    input:
+    read1 = read1,
+    read2 = read2
+  }
+  output {
+    # workflow outputs (output columns in Terra data tables)
+    Int read1_total_reads = before_task.read1_total_reads
+    Int read2_total_reads = before_task.read2_total_reads
+    }
+}
