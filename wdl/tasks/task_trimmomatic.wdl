@@ -31,7 +31,7 @@ task trimmomatic_task {
   runtime {
     # runtime environment
     docker: "~{docker}"
-    memory: "~{memory}"
+    memory: "~{memory} GB"
     cpu: cpu
     disks: "local-disk 50 SSD"
     preemptible: 0
