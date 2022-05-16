@@ -3,6 +3,7 @@ version 1.0
 task fastq_scan_task {
   meta {
     # task to calculate the total reads within each fastq file
+    description: "Task to run fastq_scan"
   }
   input {
     # task inputs
