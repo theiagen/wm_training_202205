@@ -19,7 +19,7 @@ task shovill_task {
     String? options = "''"
     # resources
     Int? cpus = 4
-    Int? ram = 8
+    Int? ram = 12
     String docker = "staphb/shovill:1.1.0"
   }
   command <<<
@@ -35,7 +35,7 @@ task shovill_task {
   runtime {
     # runtime environment
     docker: "~{docker}"
-    memory: "~{ram} GB"
+    memory: "16 GB"
     cpu: "~{cpus}"
     disks: "local-disk 50 SSD"
     preemptible: 0
