@@ -3,6 +3,7 @@ version 1.0
 # import block
 import "../tasks/task_fastq_scan.wdl" as fastqsc
 import "../tasks/task_trimmomatic.wdl" as trim
+import "../tasks/task_shovill.wdl" as shovill
 
 workflow scan_n_trim_workflow {
   input {
@@ -26,10 +27,16 @@ workflow scan_n_trim_workflow {
       read1 = trimmomatic_task.read1_trimmed,
       read2 = trimmomatic_task.read2_trimmed
   }
+  call shovill.shovill_task {
+    input:
+    read1 = trimmomatic_task.read1_trimmed,
+    read2 = trimmomatic_task.read2_trimmed
+  } 
   output {
     Int read1_raw_total_reads = fastq_scan_task.scan_results1
     Int read2_raw_total_reads = fastq_scan_task.scan_results2
     Int read1_trimmed_total_reads = fastq_scan_task_trim.scan_results1
     Int read2_trimmed_total_reads = fastq_scan_task_trim.scan_results2
+    File assembly_fasta = shovill_task.contigs
     }
 }
