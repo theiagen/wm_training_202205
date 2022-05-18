@@ -1,0 +1,7 @@
+version: 1.0
+workflows:
+	- name: ELN_fastqscan
+	  subclass: WDL
+	  primaryDescriptorPath: /wdl/workflows/wf-trimReads.wdl
+	  testParameterFiles:
+	  	- empty.json
