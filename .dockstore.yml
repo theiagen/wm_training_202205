@@ -1,6 +1,6 @@
 version: 1.0
 workflows:
-	- name: ELN_fastqscan
+	- name: Scan-N-Trim
 	  subclass: WDL
 	  primaryDescriptorPath: /wdl/workflows/Scan-N-Trim.wdl
 	  testParameterFiles:
