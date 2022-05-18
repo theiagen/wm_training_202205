@@ -1,0 +1,3 @@
+# code block executed
+trimmomatic PE /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/sample01_R1.fastq.gz /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/sample01_R2.fastq.gz sample01_R1.fastq.gz_R1.fq.gz sample01_R1.fastq.gz_RU1.fg.gz sample01_R1.fastq.gz_R2.fg.gz sample01_R1.fastq.gz_RU2.fq.gz SLIDINGWINDOW 10 AVGQUAL 20 MINLEN 75  
+ 

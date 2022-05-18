@@ -1,0 +1,5 @@
+2022-05-04 19:19:04.738 wdl.w:trimReads_workflow.t:call-trim_task NOTICE task setup :: name: "trim_task", source: "../tasks/trim.wdl", line: 1, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-trim_task", thread: 139625821034240
+2022-05-04 19:19:04.924 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker image :: tag: "staphb/trimmomatic:latest", id: "sha256:932a84b6779006f6554380e256d18ea80c19c97e54cb1628f4f5b71f80d592ea", RepoDigest: "staphb/trimmomatic@sha256:7478424ea37cc9ba5fbec3aaadcc47746644e0b00c70b77ddf8adde567bfd844"
+2022-05-04 19:19:05.728 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker task running :: service: "v1kx66u9ae", task: "ib4b8gi8ve", node: "zlt8eteswc", message: "started"
+2022-05-04 19:19:38.141 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 19:19:38.750 wdl.w:trimReads_workflow.t:call-trim_task NOTICE done

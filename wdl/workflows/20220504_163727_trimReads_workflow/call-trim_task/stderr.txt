@@ -1,0 +1,5 @@
+TrimmomaticPE: Started with arguments:
+ /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/sample01_R1.fastq.gz /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/sample01_R2.fastq.gz sample01_R1.fq.gz sample01_RU1.fg.gz sample01_R2.fg.gz sample01_RU2.fq.gz SLIDINGWINDOW:10:20 AVGQUAL:20 MINLEN:75
+Quality encoding detected as phred33
+Input Read Pairs: 380515 Both Surviving: 366536 (96.33%) Forward Only Surviving: 4242 (1.11%) Reverse Only Surviving: 1452 (0.38%) Dropped: 8285 (2.18%)
+TrimmomaticPE: Completed successfully

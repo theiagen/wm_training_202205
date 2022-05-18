@@ -1,0 +1,25 @@
+2022-05-04 15:35:00.611 wdl.w:foobar_workflow NOTICE workflow start :: name: "foobar_workflow", source: "wf_foobar.wdl", line: 7, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_153500_foobar_workflow"
+2022-05-04 15:35:00.616 wdl.w:foobar_workflow NOTICE miniwdl :: version: "v1.5.1", uname: "Linux dev-vm-3-16-64 5.4.0-1072-gcp #77~18.04.1-Ubuntu SMP Wed Apr 13 07:49:40 UTC 2022 x86_64"
+2022-05-04 15:35:00.622 wdl.w:foobar_workflow NOTICE ready :: job: "call-foo_task", callee: "foo_task"
+2022-05-04 15:35:00.623 wdl.w:foobar_workflow.t:call-foo_task NOTICE task setup :: name: "foo_task", source: "../tasks/task_foo.wdl", line: 3, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_153500_foobar_workflow/call-foo_task", thread: 139841871521536
+2022-05-04 15:35:00.895 wdl.w:foobar_workflow.t:call-foo_task NOTICE docker swarm resources :: workers: 1, max_cpus: 16, max_mem_bytes: 67439398912, total_cpus: 16, total_mem_bytes: 67439398912
+2022-05-04 15:35:00.897 wdl.w:foobar_workflow.t:call-foo_task WARNING ignored runtime settings :: keys: ["disks"]
+2022-05-04 15:35:00.917 wdl.w:foobar_workflow.t:call-foo_task NOTICE docker image :: tag: "quay.io/theiagen/utility:1.2", id: "sha256:cc42a01fdb6240a6f9012e923014ce0129bab5c2dac7cd16fb90edab96a49333", RepoDigest: "quay.io/theiagen/utility@sha256:8d39c5018411b2cc243ff354754963a3a595c114be4c450372eab9961f4f2170"
+2022-05-04 15:35:02.408 wdl.w:foobar_workflow.t:call-foo_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 15:35:03.002 wdl.w:foobar_workflow.t:call-foo_task NOTICE done
+2022-05-04 15:35:03.002 wdl.w:foobar_workflow NOTICE finish :: job: "call-foo_task"
+2022-05-04 15:35:03.003 wdl.w:foobar_workflow NOTICE ready :: job: "call-bar_task", callee: "bar_task"
+2022-05-04 15:35:03.004 wdl.w:foobar_workflow.t:call-bar_task NOTICE task setup :: name: "bar_task", source: "../tasks/task_bar.wdl", line: 3, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_153500_foobar_workflow/call-bar_task", thread: 139841783969536
+2022-05-04 15:35:03.012 wdl.w:foobar_workflow.t:call-bar_task WARNING ignored runtime settings :: keys: ["disks"]
+2022-05-04 15:35:03.028 wdl.w:foobar_workflow.t:call-bar_task NOTICE docker image :: tag: "quay.io/theiagen/utility:1.2", id: "sha256:cc42a01fdb6240a6f9012e923014ce0129bab5c2dac7cd16fb90edab96a49333", RepoDigest: "quay.io/theiagen/utility@sha256:8d39c5018411b2cc243ff354754963a3a595c114be4c450372eab9961f4f2170"
+2022-05-04 15:35:04.305 wdl.w:foobar_workflow.t:call-bar_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 15:35:04.871 wdl.w:foobar_workflow.t:call-bar_task NOTICE done
+2022-05-04 15:35:04.872 wdl.w:foobar_workflow NOTICE finish :: job: "call-bar_task"
+2022-05-04 15:35:04.873 wdl.w:foobar_workflow NOTICE ready :: job: "call-second_foo_task", callee: "foo_task"
+2022-05-04 15:35:04.874 wdl.w:foobar_workflow.t:call-second_foo_task NOTICE task setup :: name: "foo_task", source: "../tasks/task_foo.wdl", line: 3, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_153500_foobar_workflow/call-second_foo_task", thread: 139841871521536
+2022-05-04 15:35:04.881 wdl.w:foobar_workflow.t:call-second_foo_task WARNING ignored runtime settings :: keys: ["disks"]
+2022-05-04 15:35:04.898 wdl.w:foobar_workflow.t:call-second_foo_task NOTICE docker image :: tag: "quay.io/theiagen/utility:1.2", id: "sha256:cc42a01fdb6240a6f9012e923014ce0129bab5c2dac7cd16fb90edab96a49333", RepoDigest: "quay.io/theiagen/utility@sha256:8d39c5018411b2cc243ff354754963a3a595c114be4c450372eab9961f4f2170"
+2022-05-04 15:35:05.897 wdl.w:foobar_workflow.t:call-second_foo_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 15:35:06.451 wdl.w:foobar_workflow.t:call-second_foo_task NOTICE done
+2022-05-04 15:35:06.452 wdl.w:foobar_workflow NOTICE finish :: job: "call-second_foo_task"
+2022-05-04 15:35:06.453 wdl.w:foobar_workflow NOTICE done

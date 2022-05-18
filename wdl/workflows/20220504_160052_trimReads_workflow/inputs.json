@@ -1,0 +1,7 @@
+{
+  "trimReads_workflow.qual": 20,
+  "trimReads_workflow.window": 10,
+  "trimReads_workflow.minlength": 75,
+  "trimReads_workflow.fqfile2": "/mnt/projdata/wm_training/data/reads/sample01_R2.fastq.gz",
+  "trimReads_workflow.fqfile1": "/mnt/projdata/wm_training/data/reads/sample01_R1.fastq.gz"
+}

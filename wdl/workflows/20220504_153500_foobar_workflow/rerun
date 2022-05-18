@@ -1,0 +1,1 @@
+pushd /mnt/projdata/wm_training/wdl/workflows && miniwdl run wf_foobar.wdl some_number=12; popd

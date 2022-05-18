@@ -1,0 +1,6 @@
+{
+  "trim_task.out4": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-trim_task/out/out4/sample01_RU2.fq.gz",
+  "trim_task.out3": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-trim_task/out/out3/sample01_RU1.fq.gz",
+  "trim_task.out2": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-trim_task/out/out2/sample01_R2.fq.gz",
+  "trim_task.out1": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-trim_task/out/out1/sample01_R1.fq.gz"
+}

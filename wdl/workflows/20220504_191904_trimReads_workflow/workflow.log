@@ -1,0 +1,25 @@
+2022-05-04 19:19:04.724 wdl.w:trimReads_workflow NOTICE workflow start :: name: "trimReads_workflow", source: "wf-trimReads.wdl", line: 7, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow"
+2022-05-04 19:19:04.729 wdl.w:trimReads_workflow NOTICE miniwdl :: version: "v1.5.1", uname: "Linux dev-vm-3-16-64 5.4.0-1072-gcp #77~18.04.1-Ubuntu SMP Wed Apr 13 07:49:40 UTC 2022 x86_64"
+2022-05-04 19:19:04.735 wdl.w:trimReads_workflow NOTICE ready :: job: "call-fqscan_task", callee: "fqscan_task"
+2022-05-04 19:19:04.736 wdl.w:trimReads_workflow NOTICE ready :: job: "call-trim_task", callee: "trim_task"
+2022-05-04 19:19:04.737 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE task setup :: name: "fqscan_task", source: "../tasks/fqscan.wdl", line: 1, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-fqscan_task", thread: 139625829426944
+2022-05-04 19:19:04.738 wdl.w:trimReads_workflow.t:call-trim_task NOTICE task setup :: name: "trim_task", source: "../tasks/trim.wdl", line: 1, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-trim_task", thread: 139625821034240
+2022-05-04 19:19:04.902 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE docker swarm resources :: workers: 1, max_cpus: 16, max_mem_bytes: 67439398912, total_cpus: 16, total_mem_bytes: 67439398912
+2022-05-04 19:19:04.923 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE docker image :: tag: "staphb/fastq-scan:latest", id: "sha256:100f265841b6164fb7068833cc3500dc773eed491d2dc4907a2ba03164060370", RepoDigest: "staphb/fastq-scan@sha256:21829d182c0d7c1544f30416325654b5b232c2cd378805336f193c7666c20a71"
+2022-05-04 19:19:04.924 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker image :: tag: "staphb/trimmomatic:latest", id: "sha256:932a84b6779006f6554380e256d18ea80c19c97e54cb1628f4f5b71f80d592ea", RepoDigest: "staphb/trimmomatic@sha256:7478424ea37cc9ba5fbec3aaadcc47746644e0b00c70b77ddf8adde567bfd844"
+2022-05-04 19:19:05.728 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker task running :: service: "v1kx66u9ae", task: "ib4b8gi8ve", node: "zlt8eteswc", message: "started"
+2022-05-04 19:19:05.826 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE docker task running :: service: "xv964mfn83", task: "by2bwvkcce", node: "zlt8eteswc", message: "started"
+2022-05-04 19:19:09.422 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 19:19:10.094 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE done
+2022-05-04 19:19:10.095 wdl.w:trimReads_workflow NOTICE finish :: job: "call-fqscan_task"
+2022-05-04 19:19:38.141 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 19:19:38.750 wdl.w:trimReads_workflow.t:call-trim_task NOTICE done
+2022-05-04 19:19:38.751 wdl.w:trimReads_workflow NOTICE finish :: job: "call-trim_task"
+2022-05-04 19:19:38.752 wdl.w:trimReads_workflow NOTICE ready :: job: "call-second_fqscan", callee: "fqscan_task"
+2022-05-04 19:19:38.753 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE task setup :: name: "fqscan_task", source: "../tasks/fqscan.wdl", line: 1, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-second_fqscan", thread: 139625829426944
+2022-05-04 19:19:38.775 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE docker image :: tag: "staphb/fastq-scan:latest", id: "sha256:100f265841b6164fb7068833cc3500dc773eed491d2dc4907a2ba03164060370", RepoDigest: "staphb/fastq-scan@sha256:21829d182c0d7c1544f30416325654b5b232c2cd378805336f193c7666c20a71"
+2022-05-04 19:19:39.610 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE docker task running :: service: "k7ocrbwn92", task: "zf4r5jg2y4", node: "zlt8eteswc", message: "started"
+2022-05-04 19:19:42.950 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 19:19:43.583 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE done
+2022-05-04 19:19:43.584 wdl.w:trimReads_workflow NOTICE finish :: job: "call-second_fqscan"
+2022-05-04 19:19:43.588 wdl.w:trimReads_workflow NOTICE done

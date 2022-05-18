@@ -1,0 +1,8 @@
+{
+  "trimReads_workflow.fqscan_task.outputfile": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/out/fqscan_task.outputfile/reads_counts.txt",
+  "trimReads_workflow.second_fqscan.outputfile": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/out/second_fqscan.outputfile/reads_counts.txt",
+  "trimReads_workflow.trim_task.out4": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/out/trim_task.out4/sample01_RU2.fq.gz",
+  "trimReads_workflow.trim_task.out3": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/out/trim_task.out3/sample01_RU1.fq.gz",
+  "trimReads_workflow.trim_task.out2": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/out/trim_task.out2/sample01_R2.fq.gz",
+  "trimReads_workflow.trim_task.out1": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/out/trim_task.out1/sample01_R1.fq.gz"
+}

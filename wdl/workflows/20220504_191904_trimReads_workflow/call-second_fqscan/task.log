@@ -1,0 +1,5 @@
+2022-05-04 19:19:38.753 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE task setup :: name: "fqscan_task", source: "../tasks/fqscan.wdl", line: 1, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-second_fqscan", thread: 139625829426944
+2022-05-04 19:19:38.775 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE docker image :: tag: "staphb/fastq-scan:latest", id: "sha256:100f265841b6164fb7068833cc3500dc773eed491d2dc4907a2ba03164060370", RepoDigest: "staphb/fastq-scan@sha256:21829d182c0d7c1544f30416325654b5b232c2cd378805336f193c7666c20a71"
+2022-05-04 19:19:39.610 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE docker task running :: service: "k7ocrbwn92", task: "zf4r5jg2y4", node: "zlt8eteswc", message: "started"
+2022-05-04 19:19:42.950 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 19:19:43.583 wdl.w:trimReads_workflow.t:call-second_fqscan NOTICE done

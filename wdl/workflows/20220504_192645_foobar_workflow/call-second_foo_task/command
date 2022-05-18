@@ -1,0 +1,4 @@
+# code block executed 
+let "foo_number = 26 * 3"
+echo $foo_number | tee FOO_NUMBER
+ 

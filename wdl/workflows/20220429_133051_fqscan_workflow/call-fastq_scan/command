@@ -1,0 +1,3 @@
+# code block executed
+zcat /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/sample01_R1.fastq.gz /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/sample01_R1.fastq.gz | fastq-scan | jq .qc_stats.read_total > reads_counts.txt
+ 

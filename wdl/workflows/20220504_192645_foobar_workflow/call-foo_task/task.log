@@ -1,0 +1,6 @@
+2022-05-04 19:26:45.714 wdl.w:foobar_workflow.t:call-foo_task NOTICE task setup :: name: "foo_task", source: "../tasks/task_foo.wdl", line: 3, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_192645_foobar_workflow/call-foo_task", thread: 140359482038016
+2022-05-04 19:26:45.871 wdl.w:foobar_workflow.t:call-foo_task NOTICE docker swarm resources :: workers: 1, max_cpus: 16, max_mem_bytes: 67439398912, total_cpus: 16, total_mem_bytes: 67439398912
+2022-05-04 19:26:45.873 wdl.w:foobar_workflow.t:call-foo_task WARNING ignored runtime settings :: keys: ["disks"]
+2022-05-04 19:26:45.888 wdl.w:foobar_workflow.t:call-foo_task NOTICE docker image :: tag: "quay.io/theiagen/utility:1.2", id: "sha256:cc42a01fdb6240a6f9012e923014ce0129bab5c2dac7cd16fb90edab96a49333", RepoDigest: "quay.io/theiagen/utility@sha256:8d39c5018411b2cc243ff354754963a3a595c114be4c450372eab9961f4f2170"
+2022-05-04 19:26:47.893 wdl.w:foobar_workflow.t:call-foo_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 19:26:48.472 wdl.w:foobar_workflow.t:call-foo_task NOTICE done

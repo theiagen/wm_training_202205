@@ -1,0 +1,11 @@
+2022-04-29 13:30:51.316 wdl.w:fqscan_workflow NOTICE workflow start :: name: "fqscan_workflow", source: "wf-fqscan.wdl", line: 6, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220429_133051_fqscan_workflow"
+2022-04-29 13:30:51.320 wdl.w:fqscan_workflow NOTICE miniwdl :: version: "v1.5.1", uname: "Linux dev-vm-3-16-64 5.4.0-1072-gcp #77~18.04.1-Ubuntu SMP Wed Apr 13 07:49:40 UTC 2022 x86_64"
+2022-04-29 13:30:51.326 wdl.w:fqscan_workflow NOTICE ready :: job: "call-fastq_scan", callee: "fastq_scan"
+2022-04-29 13:30:51.328 wdl.w:fqscan_workflow.t:call-fastq_scan NOTICE task setup :: name: "fastq_scan", source: "../tasks/fqscan.wdl", line: 1, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220429_133051_fqscan_workflow/call-fastq_scan", thread: 140617016968960
+2022-04-29 13:30:51.603 wdl.w:fqscan_workflow.t:call-fastq_scan NOTICE docker swarm resources :: workers: 1, max_cpus: 16, max_mem_bytes: 67439394816, total_cpus: 16, total_mem_bytes: 67439394816
+2022-04-29 13:30:51.630 wdl.w:fqscan_workflow.t:call-fastq_scan NOTICE docker image :: tag: "staphb/fastq-scan:latest", id: "sha256:100f265841b6164fb7068833cc3500dc773eed491d2dc4907a2ba03164060370", RepoDigest: "staphb/fastq-scan@sha256:21829d182c0d7c1544f30416325654b5b232c2cd378805336f193c7666c20a71"
+2022-04-29 13:30:53.069 wdl.w:fqscan_workflow.t:call-fastq_scan NOTICE docker task running :: service: "lq9ov9tsm8", task: "s921gx2q7i", node: "zlt8eteswc", message: "started"
+2022-04-29 13:30:58.047 wdl.w:fqscan_workflow.t:call-fastq_scan NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-04-29 13:30:58.717 wdl.w:fqscan_workflow.t:call-fastq_scan NOTICE done
+2022-04-29 13:30:58.718 wdl.w:fqscan_workflow NOTICE finish :: job: "call-fastq_scan"
+2022-04-29 13:30:58.720 wdl.w:fqscan_workflow NOTICE done

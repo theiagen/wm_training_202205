@@ -1,0 +1,28 @@
+linked to GitHub account
+when linked, github repository is accessible in dockstore
+yaml file needs to be written so workflow is available on terra (communicates with dockstore)
+elasekness
+dockstore executable in /mnt/projdata/bin
+token: 67c324d20aba0adb41a320425b6ecbf7984de9515951e35b7f88cf4508562153
+server-url: https://dockstore.org/api
+
+first publish workflow on github
+make dockstore yaml file
+push to terra to be able to run
+
+on your vm:
+git config --global user.email 'elasekness@gmail.com'
+git config --global user.name 'elasekness'
+git branch #which branch your writing to
+
+Access dev branch
+pull changes into local branch from remote repository on github
+cd to wm_training folder
+git pull
+updates wm_training folder, which now includes all dev branches
+git checkout eln-ne-training-dev
+git branch # should show change to your dev branch
+
+from main gitub you make static version
+make developmement branches from main to modify code
+those changes get merged back to main, when final push a static release version

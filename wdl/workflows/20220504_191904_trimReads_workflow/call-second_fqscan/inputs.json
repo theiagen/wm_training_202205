@@ -1,0 +1,4 @@
+{
+  "fqfile2": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-trim_task/out/out2/sample01_R2.fq.gz",
+  "fqfile1": "/mnt/projdata/wm_training/wdl/workflows/20220504_191904_trimReads_workflow/call-trim_task/out/out1/sample01_R1.fq.gz"
+}

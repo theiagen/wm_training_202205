@@ -1,0 +1,24 @@
+{
+  "error": "RunFailed",
+  "workflow": "trimReads_workflow",
+  "run": "trimReads_workflow",
+  "dir": "/mnt/projdata/wm_training/wdl/workflows/20220504_160052_trimReads_workflow",
+  "cause": {
+    "error": "CommandFailed",
+    "exit_status": 1,
+    "stderr_file": "/mnt/projdata/wm_training/wdl/workflows/20220504_160052_trimReads_workflow/call-trim_task/stderr.txt",
+    "stdout_file": "/mnt/projdata/wm_training/wdl/workflows/20220504_160052_trimReads_workflow/call-trim_task/stdout.txt",
+    "run": "call-trim_task",
+    "dir": "/mnt/projdata/wm_training/wdl/workflows/20220504_160052_trimReads_workflow/call-trim_task",
+    "pos": {
+      "source": "/mnt/projdata/wm_training/wdl/tasks/trim.wdl",
+      "line": 1,
+      "column": 1
+    }
+  },
+  "pos": {
+    "source": "/mnt/projdata/wm_training/wdl/workflows/wf-trimReads.wdl",
+    "line": 7,
+    "column": 1
+  }
+}

@@ -1,0 +1,4 @@
+# code block executed 
+let "bar_number = 87 - 25"
+echo $bar_number | tee BAR_NUMBER
+ 

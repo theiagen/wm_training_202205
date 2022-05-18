@@ -1,0 +1,19 @@
+2022-05-04 17:04:19.794 wdl.w:trimReads_workflow NOTICE workflow start :: name: "trimReads_workflow", source: "wf-trimReads.wdl", line: 7, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_170419_trimReads_workflow"
+2022-05-04 17:04:19.798 wdl.w:trimReads_workflow NOTICE miniwdl :: version: "v1.5.1", uname: "Linux dev-vm-3-16-64 5.4.0-1072-gcp #77~18.04.1-Ubuntu SMP Wed Apr 13 07:49:40 UTC 2022 x86_64"
+2022-05-04 17:04:19.804 wdl.w:trimReads_workflow NOTICE ready :: job: "call-fqscan_task", callee: "fqscan_task"
+2022-05-04 17:04:19.805 wdl.w:trimReads_workflow NOTICE ready :: job: "call-trim_task", callee: "trim_task"
+2022-05-04 17:04:19.806 wdl.w:trimReads_workflow.t:call-trim_task NOTICE task setup :: name: "trim_task", source: "../tasks/trim.wdl", line: 1, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_170419_trimReads_workflow/call-trim_task", thread: 139855723755264
+2022-05-04 17:04:19.807 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE task setup :: name: "fqscan_task", source: "../tasks/fqscan.wdl", line: 1, column: 1, dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_170419_trimReads_workflow/call-fqscan_task", thread: 139855732147968
+2022-05-04 17:04:19.969 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker swarm resources :: workers: 1, max_cpus: 16, max_mem_bytes: 67439398912, total_cpus: 16, total_mem_bytes: 67439398912
+2022-05-04 17:04:19.990 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE docker image :: tag: "staphb/fastq-scan:latest", id: "sha256:100f265841b6164fb7068833cc3500dc773eed491d2dc4907a2ba03164060370", RepoDigest: "staphb/fastq-scan@sha256:21829d182c0d7c1544f30416325654b5b232c2cd378805336f193c7666c20a71"
+2022-05-04 17:04:19.991 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker image :: tag: "staphb/trimmomatic:latest", id: "sha256:932a84b6779006f6554380e256d18ea80c19c97e54cb1628f4f5b71f80d592ea", RepoDigest: "staphb/trimmomatic@sha256:7478424ea37cc9ba5fbec3aaadcc47746644e0b00c70b77ddf8adde567bfd844"
+2022-05-04 17:04:21.272 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE docker task running :: service: "3uxactce89", task: "63k29680f4", node: "zlt8eteswc", message: "started"
+2022-05-04 17:04:21.318 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker task running :: service: "rntjircf8p", task: "ormyzabcw1", node: "zlt8eteswc", message: "started"
+2022-05-04 17:04:24.543 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 17:04:25.166 wdl.w:trimReads_workflow.t:call-fqscan_task NOTICE done
+2022-05-04 17:04:25.167 wdl.w:trimReads_workflow NOTICE finish :: job: "call-fqscan_task"
+2022-05-04 17:04:52.989 wdl.w:trimReads_workflow.t:call-trim_task NOTICE docker task exit :: state: "complete", exit_code: 0
+2022-05-04 17:04:53.578 wdl.w:trimReads_workflow.t:call-trim_task WARNING output path not found in container (error unless declared type is optional) :: output: "out2", path: "sample01_R2.fq.gz"
+2022-05-04 17:04:53.578 wdl.w:trimReads_workflow.t:call-trim_task ERROR task trim_task (../tasks/trim.wdl Ln 1 Col 1) failed :: dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_170419_trimReads_workflow/call-trim_task", error: "OutputError", message: "File/Directory path not found in task output out2", node: "decl-out2"
+2022-05-04 17:04:53.580 wdl.w:trimReads_workflow ERROR call failure propagating :: from: "call-trim_task", dir: "/mnt/projdata/wm_training/wdl/workflows/20220504_170419_trimReads_workflow"
+2022-05-04 17:04:53.581 wdl.w:trimReads_workflow NOTICE aborting workflow

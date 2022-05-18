@@ -1,0 +1,11 @@
+TrimmomaticPE: Started with arguments:
+ /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/sample01_R1.fastq.gz /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/sample01_R2.fastq.gz sample01_R1.fastq.gz_R1.fq.gz sample01_R1.fastq.gz_RU1.fg.gz sample01_R1.fastq.gz_R2.fg.gz sample01_R1.fastq.gz_RU2.fq.gz SLIDINGWINDOW 10 AVGQUAL 20 MINLEN 75
+Exception in thread "main" java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at org.usadellab.trimmomatic.trim.SlidingWindowTrimmer.<init>(SlidingWindowTrimmer.java:14)
+	at org.usadellab.trimmomatic.trim.TrimmerFactory.makeTrimmer(TrimmerFactory.java:50)
+	at org.usadellab.trimmomatic.Trimmomatic.createTrimmers(Trimmomatic.java:59)
+	at org.usadellab.trimmomatic.TrimmomaticPE.run(TrimmomaticPE.java:552)
+	at org.usadellab.trimmomatic.Trimmomatic.main(Trimmomatic.java:80)

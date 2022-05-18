@@ -1,0 +1,21 @@
+{
+  "error": "RunFailed",
+  "task": "fqscan_task",
+  "run": "call-fqscan_task",
+  "dir": "/mnt/projdata/wm_training/wdl/workflows/20220504_160052_trimReads_workflow/call-fqscan_task",
+  "cause": {
+    "error": "Terminated",
+    "run": "call-fqscan_task",
+    "dir": "/mnt/projdata/wm_training/wdl/workflows/20220504_160052_trimReads_workflow/call-fqscan_task",
+    "pos": {
+      "source": "/mnt/projdata/wm_training/wdl/tasks/fqscan.wdl",
+      "line": 1,
+      "column": 1
+    }
+  },
+  "pos": {
+    "source": "/mnt/projdata/wm_training/wdl/tasks/fqscan.wdl",
+    "line": 1,
+    "column": 1
+  }
+}
