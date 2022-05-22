@@ -56,7 +56,7 @@ learn more on how you can do this, check out [Tower via Nextflow run command](ht
 
 ## Exercise 4 - Nextflow DSL1 vs DSL2
 
-## Exercide 5 - `scan-and-trim` DSL2 Pipeline
+## Exercide 5 - `scan-and-trim` DSL1 Pipeline
 
-## Exercise 6 - `scan-and-trim` Using nf-core/modules
+## Exercise 6 - `scan-and-trim` DSL2 Pipeline
 
