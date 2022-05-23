@@ -594,9 +594,303 @@ Before moving to the next exercise, please take a little while to explore the ou
 
 ## Exercise 3 - Nextflow Channels and Processes
 
+The basic units of Nextflow are [Channels](https://www.nextflow.io/docs/latest/channel.html) and
+[Processes](https://www.nextflow.io/docs/latest/process.html). 
+
+A Channel holds the data that is passed between Processes or transformed using 
+[Operators](https://www.nextflow.io/docs/latest/operator.html#). There are more than 50 Operators
+available to manipulate Nextflow Channels.
+
+A Process is used to execute user scripts. This is where the tools and code are executed.
+
+Here is the basic structure of a Nextflow Process
+```
+process < name > {
+
+   [ directives ]
+
+   input:
+    < process inputs >
+
+   output:
+    < process outputs >
+
+   when:
+    < condition >
+
+   [script|shell|exec]:
+   < user script to be executed >
+}
+```
+
+- `< name >`: A name to refere to the process by
+- `[ directives ]`: [30+ options](https://www.nextflow.io/docs/edge/process.html#directives) to tweak the process
+- `< process inputs >`: input Channels to be consumed by the Process
+- `< process outputs >`: output Channels to be emitted by the Process
+- `when`: Allows the processes to be executed based on a condition
+- `[script|shell|exec]`: Where you put the tools and code you would like to execute
+
+---
+
+### Channel Operators
+
+A Nextflow script named [exercise_03/nextflow_ex1.nf](https://github.com/theiagen/wm_training/blob/main/nextflow/exercise_03/nextflow_ex1.nf)
+was put together to demonstrate how Operators can be used on Nextflow Channels.
+
+In this example, not processes are be executed. Instead we are generating Channels, applying Operators, then
+printing the contents of the Channel.
+
+You can use `nextflow run` to execute the script. Here's an example execution:
+
+```{bash}
+nextflow run ~/wm_training/nextflow/exercise_03/nextflow_ex1.nf 
+N E X T F L O W  ~  version 22.04.0
+Launching `/home/rpetit/wm_training/nextflow/exercise_03/nextflow_ex1.nf` [stoic_perlman] DSL2 - revision: ce7fde1d53
+1
+2
+.toList(): [1, 2, 3, 4, 5]
+.min(): 1
+3
+4
+Output of .count(): 5
+5
+.sum(): 15
+Square of: 1 is 1
+Square of: 2 is 4
+Square of: 3 is 9
+.randomSample(): 3
+.randomSample(): 4
+Square of: 4 is 16
+Square of: 5 is 25
+```
+
+For this example, try running it a few times. Are the outputs in the same order or different each time?
+
+After executing it a few times, try changing things in the script to see what happens. For example, try using
+the `max()` Operator. There are more than [50 Operators](https://www.nextflow.io/docs/latest/operator.html#) you can give a go.
+
+---
+
+### Channels and Processes
+
+Once you are all Operatored out, let's take a look at [exercise_03/nextflow_ex2.nf](https://github.com/theiagen/wm_training/blob/main/nextflow/exercise_03/nextflow_ex2.nf).
+
+In this exercise we'll be introduced to the _first in, first out_ (FIFO) nature of Channels.
+
+Basically we've created a script to:
+
+1. Convert Squares to Triangles
+2. Group Squares and Triangles with the same color
+3. Print the grouped pairs
+
+Here's an example of what we want: 
+
+```
+nextflow run ~/wm_training/nextflow/exercise_03/nextflow_ex2.nf 
+N E X T F L O W  ~  version 22.04.0
+Launching `/home/rpetit/wm_training/nextflow/exercise_03/nextflow_ex2.nf` [boring_euclid] DSL2 - revision: 6947e43df9
+executor >  local (6)
+[de/87f1ad] process > make_triangle (green-square - 8) [100%] 3 of 3 ✔
+[d3/02b8ba] process > merge_shapes (3)                 [100%] 3 of 3 ✔
+blue-square - blue-triangle
+green-square - green-triangle
+red-square - red-triangle
+```
+
+You'll notice the squares and triangles are grouped by color. You try executing this script a few times,
+does it print the correct pairs all the time? If not, can you figure out what's happening?
+
+---
+
+### Using Operators to Ensure Channel Order
+
+Unless you completely skipped the previous section, you should now better understand how the FIFO 
+nature of Channels can produce unintended side-effects. In the previous example, sometimes we did
+get the correct pairs, but most of the time our pairs were mixed. 
+
+In this example, we're going to use the [`toSortedList`](https://www.nextflow.io/docs/edge/operator.html#tosortedlist)
+Operator to ensure we always get correct pairs. Let's go a head take a look at 
+[exercise_03/nextflow_ex3.nf](https://github.com/theiagen/wm_training/blob/main/nextflow/exercise_03/nextflow_ex3.nf).
+
+In this exercise we'll use Operators to manipulate the Channels and ensure _first in, first out_ (FIFO) is always the same. This script will:
+
+1. Convert Squares to Triangles
+2. Group Squares and Triangles with the same color, using sorted lists
+3. Print the grouped pairs
+
+Now are you always getting the same outputs? Can you foresee any issues using a sorted lists?
+
+---
+
+### Using Outputs to Ensure Channel Order
+
+While the sorted lists worked to ensure we always had the correct pairs, I can't help but wonder: _What if our pairs weren't alphabetical?_
+
+An alternative (_there are so many ways to do the same thing, get creative!_), is to carry the outputs together. Let's
+go a head take a look at the final example for this exercise: [exercise_03/nextflow_ex4.nf](https://github.com/theiagen/wm_training/blob/main/nextflow/exercise_03/nextflow_ex4.nf).
+
+```
+nextflow run ~/wm_training/nextflow/exercise_03/nextflow_ex4.nf 
+N E X T F L O W  ~  version 22.04.0
+Launching `/home/rpetit/wm_training/nextflow/exercise_03/nextflow_ex4.nf` [modest_crick] DSL2 - revision: 4bdd5646bf
+executor >  local (6)
+[1d/dad619] process > make_triangle (green-square - 8) [100%] 3 of 3 ✔
+[3c/544437] process > merge_shapes (3)                 [100%] 3 of 3 ✔
+red-square - red-triangle
+blue-square - blue-triangle
+green-square - green-triangle
+```
+
+Similar to the previous example, we will always get the correct pairs. Take a look at the script
+and see if you can figure out what we are doing? Is this way better than using sorted lists?
+
+Take some time to just peruse these scripts. Because these scripts are the basic structure for 
+some really complex Nextflow pipelines!
+
+---
+
 ## Exercise 4 - Nextflow DSL1 vs DSL2
 
+Here we are, you go thrown into the deep end of Nextflow. You've played around with Channels, Operators,
+and Processes. Now its time to jump into Nextflow DSL1 and Nextflow DSL2. 
 
-## Bonus Exercise - Use `-with-tower`
-As a bonus exercise, let's try running our pipeline with metrics reported to [Tower](https://tower.nf/). To 
+_Note: This exercise is really meant to be done together with the instructor, because there is a lot of discussion_
+
+DSL1 and DSL2 are versions of the syntax used in Nextflow langauge. For all extensive purposes, you
+should be using DSL2, but it helps to understand the differences between the two.
+
+In the exercise will be taking a look at [`scan-n-trim`](https://github.com/theiagen/wm_training/blob/solutions/wdl/workflows/wf_scan_n_trim.wdl),
+a WDL workflow we produced a few weeks ago, in Nextflow DSL1 and DSL2. `scan-n-trim` used 
+[fastq-scan](https://github.com/rpetit3/fastq-scan) to generate statistics on the original FASTQ,  
+[Trimmomatic](https://github.com/usadellab/Trimmomatic) trim the original FASTQ, then run fastq-scan again on 
+the trimmed reads.
+
+For this exercise will also be making use of a 
+[nextflow.config](https://github.com/theiagen/wm_training/blob/main/nextflow/exercise_04/nextflow.config) file. This config file has the following:
+```
+docker.enabled = true
+
+// Set default inputs
+params.sample = "SRR2838702"
+params.r1 = "https://github.com/bactopia/bactopia-tests/raw/main/data/species/portiera/illumina/SRR2838702_R1.fastq.gz"
+params.r2 = "https://github.com/bactopia/bactopia-tests/raw/main/data/species/portiera/illumina/SRR2838702_R2.fastq.gz"
+
+// Trimmomatic paramters 
+params.window_size = 4
+params.minlen = 75
+params.quality_trim_score = 30
+params.max_cpus = 4
+```
+
+What this config file does is specify a few default values that our `scan-n-trim` pipelines will use.
+You have full control to change any of the `params.` at the command line. For instance to change `params.max_cpus`
+you would add `--max_cpus 2` to the command.
+
+---
+
+### `scan-n-trim` DSL1
+
+Again, for all extensive purposes going forward, you should be writing new Nextflow pipelines in DSL2.
+But being able to use and navigate DSL1 is still needed, as there are still many DSL1 pipelines out
+there.
+
+Go ahead and take a look at [exercise_04/scan-n-trim-dsl1.nf](https://github.com/theiagen/wm_training/blob/main/nextflow/exercise_04/scan-n-trim-dsl1.nf).
+
+Try executing it:
+```
+nextflow run ~/wm_training/nextflow/exercise_04/scan-n-trim-dsl1.nf 
+N E X T F L O W  ~  version 22.04.0
+Launching `/home/rpetit/wm_training/nextflow/exercise_04/scan-n-trim-dsl1.nf` [crazy_descartes] DSL1 - revision: 271b352b08
+executor >  local (3)
+[1b/4eab6f] process > FASTQ_SCAN_ORIGINAL (SRR2838702) [100%] 1 of 1 ✔
+[6f/0136f3] process > TRIMMOMATIC (SRR2838702)         [100%] 1 of 1 ✔
+[ed/62e158] process > FASTQ_SCAN_FINAL (SRR2838702)    [100%] 1 of 1 ✔
+
+ls -lh SRR2838702-dsl1/
+total 9.9M
+-rw-r--r-- 1 rpetit rpetit  4.2M May 23 03:36 SRR2838702_1P.fastq.gz
+-rw-r--r-- 1 rpetit rpetit 1008K May 23 03:36 SRR2838702_1U.fastq.gz
+-rw-r--r-- 1 rpetit rpetit  4.2M May 23 03:36 SRR2838702_2P.fastq.gz
+-rw-r--r-- 1 rpetit rpetit  556K May 23 03:36 SRR2838702_2U.fastq.gz
+-rw-r--r-- 1 rpetit rpetit  3.2K May 23 03:36 SRR2838702_R1-final.json
+-rw-r--r-- 1 rpetit rpetit  2.8K May 23 03:36 SRR2838702_R1-original.json
+-rw-r--r-- 1 rpetit rpetit  3.2K May 23 03:36 SRR2838702_R2-final.json
+-rw-r--r-- 1 rpetit rpetit  2.7K May 23 03:36 SRR2838702_R2-original.json
+```
+
+Now, try rerunning it but on different FASTQs (_maybe the ones used for the WDL scan-n-trim_), change the parameters, what happens if you set `--minlen` to a super high value?
+
+---
+
+### `scan-n-trim` DSL2
+
+The latest and greatest of Nextflow: DSL2. Go ahead and take a look at [exercise_04/scan-n-trim-dsl2.nf](https://github.com/theiagen/wm_training/blob/main/nextflow/exercise_04/scan-n-trim-dsl2.nf).
+
+You will probably notice its a bit more streamlined than the DSL1 version. In the DSL2 version we make use of modules:
+```
+include { FASTQ_SCAN as FASTQ_SCAN_ORIGINAL } from './modules/fastqscan.nf'
+include { FASTQ_SCAN as FASTQ_SCAN_FINAL } from './modules/fastqscan.nf'
+include { TRIMMOMATIC } from './modules/trimmomatic.nf'
+```
+
+What this does is allow us to reuse the same files. Even better if we want to use these modules in another pipeline, 
+all we have to do is point to them.
+
+We all get to reuse Channels in DSL2, in the previous DSL1 version duplicate input channels were needed for the 
+original FASTQ inputs.
+
+Go ahead and try executing the DSL2 pipeline:
+```
+nextflow run ~/wm_training/nextflow/exercise_04/scan-n-trim-dsl2.nf 
+N E X T F L O W  ~  version 22.04.0
+Launching `/home/rpetit/wm_training/nextflow/exercise_04/scan-n-trim-dsl2.nf` [dreamy_darwin] DSL2 - revision: b641a6c405
+executor >  local (3)
+[65/51da6f] process > FASTQ_SCAN_ORIGINAL (SRR2838702) [100%] 1 of 1 ✔
+[e3/085ccf] process > TRIMMOMATIC (SRR2838702)         [100%] 1 of 1 ✔
+[95/703152] process > FASTQ_SCAN_FINAL (SRR2838702)    [100%] 1 of 1 ✔
+```
+
+Hard to tell the difference between the two! As you might expect the outputs are identical as well.
+
+Go ahead and see what happens when you change the `params` on the command line. Think you can convert it
+to use Conda instead? 
+
+---
+
+## Bonus Exercises
+
+The following exercises start to get into advanced features of Nextflow. Overtime, if you
+continue to develop in Nextflow, they'll become unavoidable.
+
+### Use Nextflow Tower
+Try running our pipeline with metrics reported to [Tower](https://tower.nf/). To 
 learn more on how you can do this, check out [Tower via Nextflow run command](https://help.tower.nf/22.1/getting-started/usage/#via-tower-api)
+
+---
+
+### Adjust how files are output
+There is a process directive called [publishDir](https://www.nextflow.io/docs/latest/process.html#publishdir). Try adding
+it to our DSL2 pipeline to change where output files are published to.
+
+---
+
+### Use labels to adjust runtime requirements
+The [label](https://www.nextflow.io/docs/latest/process.html#label) directive is heavily used in 
+[nf-core](https://github.com/nf-core/rnaseq/blob/master/conf/base.config#L21-L42) to assign the
+runtime requirements of a process. Try creating your own labels to alter how much resources a
+process can use.
+
+---
+
+### Use profiles to switch between Conda and Docker
+Try creating your own [config profile](https://www.nextflow.io/docs/latest/config.html#config-profiles)
+to allow easy switching between Docker and Conda. Hey maybe you could even toss Singularity or a 
+Cloud provider (_if you have access to one_).
+
+---
+
+### Create a DSL2 pipeline using modules from nf-core/modules
+There are so many pre-built DSL2 modules available from 
+[nf-core/modules](https://github.com/nf-core/modules#using-existing-modules). Try creating your
+own DSL2 pipeline using the [nf-core/tools](https://github.com/nf-core/tools) package and modules
+from `nf-core/modules`
