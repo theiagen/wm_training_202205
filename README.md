@@ -53,6 +53,7 @@ Below is a list of helpful resources that we recommend all trainees review, at l
 
 **Week 4: Getting Started with Conda and Nextflow**
 - [Lecture Slides](https://github.com/theiagen/wm_training/raw/main/docs/images/week4_slides.pdf)
+- [Exercise 04: Nextflow](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_04.md)
 
 ### Exercise Resource Requirements
 - Google Cloud Platform Virtual Machines (GCP VMs) with all pre-requisite software installed will be provisioned to all registered trainees. For those interested in recreating this training with their own compute environment, here is a list of resources required for the completion of each exercise:
