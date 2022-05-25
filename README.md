@@ -50,6 +50,7 @@ Below is a list of helpful resources that we recommend all trainees review, at l
 
 **Week 3: Connecting WDL Workflows with Terra.Bio**
 - [Lecture Slides](https://github.com/theiagen/wm_training/raw/main/docs/images/week3_slides.pdf) & [Recorded Session](https://www.youtube.com/watch?v=_lIiDz4uacI)
+- [Exercise 03: Connecting WDL Workflows to the Terra.Bio Platform](https://github.com/theiagen/wm_training/blob/main/docs/exercises/exercise_03.md)
 
 **Week 4: Getting Started with Conda and Nextflow**
 - [Lecture Slides](https://github.com/theiagen/wm_training/raw/main/docs/images/week4_slides.pdf)
