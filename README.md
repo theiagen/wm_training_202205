@@ -1,12 +1,3 @@
------
-
-<p align="center">  
-  <b>NOTE: THESE TRAININGS RESOURCES ARE BEING PROVIDED TO ITS FIRST COHORTS AND UNDER ACTIVE DEVELOPMENT </b>
-
-</p>
-
------
-
 # Workflow Management Solutions for Public Health Bioinformatics
 Theiagen Genomics repository for workshop resources, code templates, and exercise materails 
 
